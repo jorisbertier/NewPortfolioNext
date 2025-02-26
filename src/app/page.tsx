@@ -5,10 +5,14 @@ import Nav from '../../src/app/components/nav/index';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import HeroSection from './components/HeroSection';
+import PathDrawing from './components/Test';
+import RevealName from './components/RevealName'
 
 export default function Home() {
   const [isActive, setIsActive] = useState(false);
   const pathname = usePathname();
+
+  const [hovered, setHovered] = useState(false)
 
   useEffect(() => {
     if (isActive) setIsActive(false);
@@ -17,10 +21,9 @@ export default function Home() {
   return (
     <>
       <div className='h-full'>
-        {/* <div className='w-full flex justify-center'>
-          <h1 className='text-blue-500'>Test</h1>
-        </div> */}
-
+        <RevealName />
+        {/* <p className=' text-[60px] top-[100px] left-[100px] text-white z-10 font-avantGarde font-bold absolute'>Hello .<span className='bg-white h-8 w-8 rounded-full z-10'></span></p> */}
+        {/* Texte principal en arrière-plan */}
         <div className="absolute z-30">
           <div className="fixed right-0 z-10 p-7">
             <div
@@ -41,6 +44,8 @@ export default function Home() {
         </div>
         <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
       </div>
+      <PathDrawing bottom={0}/>
+      <PathDrawing bottom={45}/>
       <HeroSection/>
     </>
   );

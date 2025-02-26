@@ -10,10 +10,8 @@ export default function HeroSection() {
 
     return (
         <main className="relative h-screen w-full flex items-center justify-center text-[#afa18f] text-4xl leading-[66px] cursor-default">
-            
-            {/* Texte principal en arrière-plan */}
             <p className="absolute z-0 max-w-[1000px] p-10 text-center font-avantGarde text-6xl font-bold">
-                I'm a <span className="text-[#ec4e39]">selectively skilled</span> product designer with strong focus on producing high quality & impactful digital experience.
+            I develop <span className="text-[#ec4e39]">{'{things}'} </span> for the web.
             </p>
 
             {/* Masque dynamique au-dessus */}
@@ -35,7 +33,7 @@ export default function HeroSection() {
                     onMouseEnter={() => setIsHovered(true)} 
                     onMouseLeave={() => setIsHovered(false)}
                 >
-                    A visual designer - with skills that haven't been replaced by A.I (yet) - making good shit only if the paycheck is equally good.
+                    I develop <span className="text-[#afa18f]">{'{things}'} </span> for the web.
                 </p>
             </motion.div>
 
