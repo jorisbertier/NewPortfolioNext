@@ -18,11 +18,11 @@ export default function Index() {
 
     return (
         <motion.div 
-        variants={menuSlide} 
-        initial="initial" 
-        animate="enter" 
-        exit="exit" 
-        className="fixed top-0 right-0 h-screen bg-gray-900 text-white"
+            variants={menuSlide} 
+            initial="initial" 
+            animate="enter" 
+            exit="exit" 
+            className="fixed top-0 right-0 h-screen bg-gray-900 text-white z-20"
         >
         <div className="h-full flex flex-col justify-between p-24">
             <div 
