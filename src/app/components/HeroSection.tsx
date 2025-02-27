@@ -10,8 +10,8 @@ export default function HeroSection() {
 
     return (
         <main className="relative h-screen w-full flex items-center justify-center text-[#afa18f] text-4xl leading-[66px] cursor-default">
-            <p className="absolute z-0 max-w-[1000px] p-10 text-center font-avantGarde text-6xl font-bold">
-            I develop <span className="text-[#ec4e39]">{'{things}'} </span> for the web.
+            <p className="absolute z-0 max-w-[1000px] p-10 text-left font-avantGarde text-6xl font-bold">
+            Joris Bertier <br></br>I develop <span className="text-[#ec4e39]">{'{things}'} </span> for the web.
             </p>
 
             {/* Masque dynamique au-dessus */}
@@ -29,11 +29,11 @@ export default function HeroSection() {
                 }}
             >
                 <p 
-                    className="max-w-[1000px] p-10 text-center text-6xl font-bold" 
+                    className="max-w-[1000px] p-10 text-left text-6xl font-bold" 
                     onMouseEnter={() => setIsHovered(true)} 
                     onMouseLeave={() => setIsHovered(false)}
                 >
-                    I develop <span className="text-[#afa18f]">{'{things}'} </span> for the web.
+                    Joris Bertier <br></br>I develop <span className="text-[#afa18f]">{'{things}'} </span> for the web.
                 </p>
             </motion.div>
 

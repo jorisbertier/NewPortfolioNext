@@ -11,10 +11,14 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        brown: "#afa18f", 
+        brown: "#afa18f",
+        textprimary: '#ffff'
       },
       fontFamily: {
         avantGarde: ["Avant Garde Book BT", "sans-serif"],
+      },
+      backgroundColor: {
+        bgbrown: "#afa18f", 
       }
     },
   },

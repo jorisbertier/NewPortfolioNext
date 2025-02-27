@@ -32,12 +32,12 @@ const draw = {
 
 
 
-export default function PathDrawing({ bottom }: { bottom: number }) {
+export default function ArrowDrawing({ bottom }: { bottom: number }) {
     return (
         <div className={`absolute flex justify-center w-screen`} style={{ bottom: `${bottom}px` }}>
             <motion.svg width="200" height="400" viewBox="0 0 200 400" fill="none">
                 {/* Tige de la flèche */}
-                {/* <motion.line
+                <motion.ellipse
                     x1="100"
                     y1="300"
                     x2="100"
@@ -48,7 +48,7 @@ export default function PathDrawing({ bottom }: { bottom: number }) {
                     style={shape}
                     initial="hidden"
                     animate="visible"
-                /> */}
+                />
 
                 {/* Pointe de la flèche */}
                 <motion.line
