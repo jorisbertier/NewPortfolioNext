@@ -31,7 +31,6 @@ const draw = {
 };
 
 
-
 export default function ArrowDrawing({ bottom }: { bottom: number }) {
     return (
         <div className={`absolute flex justify-center w-screen`} style={{ bottom: `${bottom}px` }}>

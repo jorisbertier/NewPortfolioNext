@@ -4,6 +4,10 @@ import Futur from '../../../public/assets/project/future.png'
 // import Explore from '../../../public/assets/calendarAPI1.png'
 import {Logos} from '../utils/LogoDatas'
 import Project from '../components/Project'
+import { AnimatePresence, motion } from 'framer-motion'
+
+
+import Modal from '../components/Modal'
 
 // const defaultFontFamilyTitle = css`
 //     font-family: Inter, sans-serif; /* Vous pouvez remplacer 'Arial' par votre police de caractères par défaut */
@@ -57,6 +61,10 @@ import Project from '../components/Project'
 export default function ProjectsSection() {
 
     const [addProject, setAddProject] = useState(false)
+    const [modalOpen, setModalOpen] = useState(false)
+
+    const close= () => setModalOpen(false)
+    const open= () => setModalOpen(true)
 
   
   return (
@@ -96,7 +104,13 @@ export default function ProjectsSection() {
 
         </div>
         <br/><br/>
-        
+        <div className='z-30'>
+        <motion.button whileHover={{ scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => modalOpen ? close() : open()} className='bg-green-500'>Launch modal</motion.button>
+      </div>
+      {modalOpen && <Modal modalOpen={modalOpen} handleClose={close}/>}
+    <AnimatePresence initial={false} exitBeforeEnter={true} onExitComplete={() => null}>
+
+    </AnimatePresence>
         {/* {addProject ?
         (
         <>

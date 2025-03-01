@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <>
-      <div className='h-full max-w-full'>
+      <div className='max-w-full'>
         <RevealName />
         {/* <p className=' text-[60px] top-[100px] left-[100px] text-white z-10 font-avantGarde font-bold absolute'>Hello .<span className='bg-white h-8 w-8 rounded-full z-10'></span></p> */}
         {/* Texte principal en arrière-plan */}
@@ -45,12 +45,11 @@ export default function Home() {
         </div>
         <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
       </div>
-      {/* <PathDrawing bottom={0}/>
-      <PathDrawing bottom={45}/> */}
-      <HeroSection/>
-      <ProjectsSection>
-
-      </ProjectsSection>
+      <PathDrawing bottom={0}/>
+      <PathDrawing bottom={45}/>
+      <HeroSection>
+      </HeroSection>
+      <ProjectsSection/>
     </>
   );
 }
