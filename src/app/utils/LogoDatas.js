@@ -34,6 +34,10 @@ export const Logos = {
 
 export const ProjectPicture = {
     Futur1: "/assets/project/future.png",
+    Futur2: "/assets/project/future15.png",
+    Futur3: "/assets/project/future11.png",
+    Futur4: "/assets/project/future16.png",
+    Futur5: "/assets/project/future6.png",
     Entracte1: "/assets/project/entracte1.png",
     calendar1: "/assets/project/calendarAPI1.png",
     calendar2: "/assets/project/calendarAPI4.png",

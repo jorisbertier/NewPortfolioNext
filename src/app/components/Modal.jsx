@@ -39,9 +39,10 @@ function Modal({handleClose, modalOpen}) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const carouselImages = [
         ProjectPicture.Futur1, 
-        ProjectPicture.Entracte1, 
-        ProjectPicture.calendar1, 
-        ProjectPicture.calendar2
+        ProjectPicture.Futur2, 
+        // ProjectPicture.Futur3, 
+        ProjectPicture.Futur4,
+        ProjectPicture.Futur5
     ];
 
     
@@ -57,22 +58,22 @@ function Modal({handleClose, modalOpen}) {
         setCurrentIndex((prevIndex) => {
             const newIndex = prevIndex === 0 ? carouselImages.length - 1 : prevIndex - 1;
             console.log('Image précédente:', newIndex);
-            return newIndex;
+            return newIndex;    
         });
     };
 
     return (
         <Backdrop onClick={handleClose}>
             <motion.div
-                className="max-w-[90vw] w-[700px] flex justify-center items-center h-[80vh] overflow-y-auto m-auto p-0 z-40 rounded-2xl flex-col bg-black shadow-lg"
+                className="max-w-[90vw] w-[700px] flex justify-center items-center max-h-[80vh] m-auto p-0 z-40 rounded-2xl flex-col bg-shadow shadow-2xl"
                 variants={dropIn}
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className='relative w-full h-1/2 rounded-xl overflow-hidden'>
+                <div className='relative w-full h-[500px] rounded-xl overflow-hidden'>
                 <motion.img
                     key={currentIndex}
                     src={carouselImages[currentIndex]}
-                    className='absolute w-full h-full object-cover'
+                    className='absolute w-full h-full object-cover aspect-3/2'
                     initial={{ opacity: 0, filter: "blur(10px)" }}
                     animate={{ opacity: 1, filter: "blur(0px)" }}
                     exit={{ opacity: 0, filter: "blur(10px)" }}
@@ -87,11 +88,14 @@ function Modal({handleClose, modalOpen}) {
                         <MdArrowForwardIos fill='black' size={'35px'}/>
 
                     </div> */}
-                    <h2 className="absolute top-5 left-5 text-white text-2xl font-bold z-10">FUTUR</h2>
+                    <div className='absolute top-5 left-5 backdrop-blur-lg'>
+                    <h2 className="absolute top-5 left-5 text-white text-2xl font-bold z-10">FUTURE</h2>
+
+                    </div>
                 </div>
-                <div className='w-full flex justify-center mt-5'>
+                <div className='w-full flex justify-center mt-5 mb-3'>
                     <div className="bottom-4 flex items-center space-x-3">
-                        <div className='p-2 bg-primary mr-2 rounded-full' onClick={() => prevImage()}>
+                        <div className='p-2 bg-primary mr-2 rounded-full cursor-pointer' onClick={() => prevImage()}>
                             <MdArrowBackIosNew fill="black" size={25} />
                         </div>
                             {carouselImages.map((_, index) => (
@@ -103,30 +107,31 @@ function Modal({handleClose, modalOpen}) {
                                     style={{ width: 8 }} // Valeur initiale
                                 />
                             ))}
-                        <div className='p-2 bg-primary ml-2 rounded-full' onClick={() => nextImage()}>
+                        <div className='p-2 bg-primary ml-2 rounded-full cursor-pointer' onClick={() => nextImage()}>
                             <MdArrowForwardIos fill='black' size={25}/>
                         </div>
                     </div>
                 </div>
-                <div className='w-full text-left p-4'>
-                    <div>
-                    <h2>Description .</h2>
-                    <p>Future est une plateforme combinant cryptomonnaies et NFTs qui offre aux utilisateurs la possibilité de découvrir, acheter et suivre la valeur des NFTs.
-                        Les fonctionnalités incluent la création d’une galerie personnalisée et de suivi de la performance de leur investissement lié à l’Ethereum.
-                        L’orquestration se divise en 2 applications, une en Symfony (API et administration) et l’autre en Angular (client).
-                    </p>
+                <div className='w-full text-left p-4 overflow-y-auto scrollbar-hide'>
+                    <div className='mb-5'>
+                        <h2 className='text-3xl mb-4 font-bold'>Description</h2>
+                        <p className=''>FUTURE est une plateforme combinant cryptomonnaies et NFTs qui offre aux utilisateurs la possibilité de découvrir, acheter et suivre la valeur des NFTs.
+                            Les fonctionnalités incluent la création d’une galerie personnalisée et de suivi de la performance de leur investissement lié à l’Ethereum.
+                            L’orquestration se divise en 2 applications, une en Symfony (API et administration) et l’autre en Angular (client).
+                            L'application web est totalement responsive et adapaté à un usage mobile.
+                        </p><br></br>
                     </div>
                     <div>
-                        <h2>Stack</h2>
+                        <h2 className='text-3xl font-bold'>Stack</h2>
                     </div>
                 </div>
-                <div className="p-4 text-center">
+                {/* <div className="p-4 text-center">
                 <button
                     className="inline-block px-5 py-2 text-lg font-bold text-blue-500 border-2 border-blue-500 bg-transparent rounded-md cursor-pointer transition-all duration-300 ease-in-out shadow-[8px_6px_0_2px_#1d1e30] hover:bg-blue-500 hover:text-white"
                     >
                     More about
                     </button>
-                </div>
+                </div> */}
             </motion.div>
         </Backdrop>
     )

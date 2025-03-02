@@ -12,6 +12,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         brown: "#afa18f",
+        shadow: '#1C1917',
         textprimary: '#ffff'
       },
       fontFamily: {
@@ -19,11 +20,12 @@ export default {
       },
       backgroundColor: {
         bgbrown: "#afa18f",
+        shadow: '#1C1917',
         primary: '#ec4e39'
       }
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')],
   corePlugins: {
     backdropFilter: true,
   },
