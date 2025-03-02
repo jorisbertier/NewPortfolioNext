@@ -31,3 +31,7 @@ export const Logos = {
     FigmaLight: "/assets/logoStack/figma-light.png",
     MysqlLight: "/assets/logoStack/mysql-light.png",
 };
+
+export const ProjectPicture = {
+    Futur1: "/assets/project/future.png",
+}

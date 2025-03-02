@@ -102,15 +102,15 @@ export default function ProjectsSection() {
             stack4={Logos.GoogleLight}
             />
 
+      {modalOpen && <Modal modalOpen={modalOpen} handleClose={close}/>}
         </div>
         <br/><br/>
         <div className='z-30'>
         <motion.button whileHover={{ scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => modalOpen ? close() : open()} className='bg-green-500'>Launch modal</motion.button>
       </div>
-      {modalOpen && <Modal modalOpen={modalOpen} handleClose={close}/>}
-    <AnimatePresence initial={false} exitBeforeEnter={true} onExitComplete={() => null}>
+    {/* <AnimatePresence initial={false} exitBeforeEnter={true} onExitComplete={() => null}>
 
-    </AnimatePresence>
+    </AnimatePresence> */}
         {/* {addProject ?
         (
         <>

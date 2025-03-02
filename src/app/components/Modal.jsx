@@ -1,6 +1,7 @@
 import React from 'react'
 import Backdrop from './Backdrop'
 import { motion } from 'framer-motion'
+import {ProjectPicture} from '../utils/LogoDatas'
 
 function Modal({handleClose, modalOpen}) {
 
@@ -28,12 +29,18 @@ function Modal({handleClose, modalOpen}) {
     return (
         <Backdrop onClick={handleClose}>
             <motion.div
-            // w-[clamp(50%,100px,90%)] h-[min(50%,300px)]
-            className="w-96 flex justify-center items-center h-28 m-auto p-4 rounded-xl flex-col bg-black shadow-lg"
-            onClick={(e) => e.stopPropagation()}
-            variants={dropIn}
+                className="max-w-[90vw] w-[500px] flex justify-center items-center h-auto m-auto p-0 rounded-2xl flex-col bg-white shadow-lg"
+                variants={dropIn}
             >
-                Test
+                <div className='relative w-full h-60 rounded-xl overflow-hidden'>
+                    <img src={ProjectPicture.Futur1} className='w-full h-full object-cover'/>
+                    <h2 className="absolute top-5 left-5 text-white text-2xl font-bold z-10">FUTUR</h2>
+                </div>
+                <div className="p-4 text-center">
+                    <button className="px-4 py-2 bg-blue-500 text-white rounded-lg">
+                        More about
+                    </button>
+                </div>
             </motion.div>
         </Backdrop>
     )
