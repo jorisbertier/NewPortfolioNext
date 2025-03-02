@@ -34,4 +34,7 @@ export const Logos = {
 
 export const ProjectPicture = {
     Futur1: "/assets/project/future.png",
+    Entracte1: "/assets/project/entracte1.png",
+    calendar1: "/assets/project/calendarAPI1.png",
+    calendar2: "/assets/project/calendarAPI4.png",
 }
