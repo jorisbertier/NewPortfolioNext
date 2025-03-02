@@ -18,9 +18,13 @@ export default {
         avantGarde: ["Avant Garde Book BT", "sans-serif"],
       },
       backgroundColor: {
-        bgbrown: "#afa18f", 
+        bgbrown: "#afa18f",
+        primary: '#ec4e39'
       }
     },
   },
   plugins: [],
+  corePlugins: {
+    backdropFilter: true,
+  },
 } satisfies Config;
