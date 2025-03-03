@@ -154,7 +154,7 @@ export default function ProjectsSection() {
     <AnimatePresence initial={false} exitBeforeEnter={true} onExitComplete={() => null}>
 
     </AnimatePresence>
-        {/* {addProject ?
+        {addProject ?
         (
         <>
             <WrapperProject>
@@ -164,12 +164,22 @@ export default function ProjectsSection() {
                 description="Explore est une application qui permet la mutualisation de prise de rende-vous en fonction des créneaux de disponibilités du collaborateur. L'application est connecté à l'API Google Calendar afin de synchroniser les données. (Projet confidientiel)"
                 src={Explore}
                 /><br/>
-            <div><ButtonLoad onClick={() => setAddProject(false)}>Load close</ButtonLoad></div>
+            <div>                        <button onClick={() => setAddProject(false)}
+                    className="inline-block px-5 py-2 text-lg font-bold text-blue-500 border-2 border-blue-500 bg-transparent rounded-md cursor-pointer transition-all duration-300 ease-in-out shadow-[8px_6px_0_2px_#1d1e30] hover:bg-blue-500 hover:text-white"
+                    >
+                    Load more
+                    </button></div>
             </WrapperProject>
         </>
         ): (
-        <div><ButtonLoad onClick={() => setAddProject(true)}>Load more</ButtonLoad></div>
-        )} */}
+        <div className='w-screen flex justify-center'>
+            <button onClick={() => setAddProject(true)}
+            className="inline-block px-5 py-2 text-lg font-bold text-blue-500 border-2 border-blue-500 bg-transparent rounded-md cursor-pointer transition-all duration-300 ease-in-out shadow-[8px_6px_0_2px_#1d1e30] hover:bg-blue-500 hover:text-white"
+                    >
+                    Load more
+              </button>
+            </div>
+        )}
     </div>
   )
 }
