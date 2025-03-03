@@ -22,6 +22,9 @@ export default {
         bgbrown: "#afa18f",
         shadow: '#1C1917',
         primary: '#ec4e39'
+      },
+      boxShadow: {
+        customStack: '6px 6px 0 1px #1d1e30',
       }
     },
   },

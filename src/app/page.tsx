@@ -6,8 +6,9 @@ import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import HeroSection from './components/HeroSection';
 import PathDrawing from './components/ArrowDrawing';
-import RevealName from './components/RevealName'
+// import RevealName from './components/RevealName'
 import ProjectsSection from '../app/section/ProjectSection'
+import StackSection from '../app/section/StackSection'
 
 export default function Home() {
   const [isActive, setIsActive] = useState(false);
@@ -50,6 +51,7 @@ export default function Home() {
       <HeroSection>
       </HeroSection>
       <ProjectsSection/>
+      <StackSection />
     </div>
   );
 }
