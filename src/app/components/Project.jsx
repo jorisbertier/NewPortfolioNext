@@ -3,7 +3,7 @@ import LogoStack from './LogoStack';
 
 export default function Project({ title, alt, description, src, stack1, stack2, stack3, stack4, onClick }) {
     return (
-        <div onClick={onClick}>
+        <div onClick={onClick} className='cursor-pointer'>
             <div className="relative h-[200px] w-[400px] rounded-2xl overflow-hidden group">
                 <img
                     src={src}
@@ -20,7 +20,7 @@ export default function Project({ title, alt, description, src, stack1, stack2, 
                     {stack4 ? <LogoStack logo={stack4} /> : null}
                 </div>
             </div>
-            <h2>{title}</h2>
+            <h3 className='font-semibold mt-4 text-[30px]'>: : {title}</h3>
             <br />
         </div>
     );

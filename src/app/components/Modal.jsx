@@ -7,15 +7,21 @@ import { useState, useEffect } from 'react'
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import LogoStack from './LogoStack'
 
-function Modal({handleClose, modalOpen}) {
+function Modal({handleClose, modalOpen,
+    src,
+    description, title,
+    stack,
+    texts
 
+}) {
+    console.log('text', texts)
     useEffect(() => {
-        document.body.style.overflow = modalOpen ? "hidden" : "auto";
+        document.body.style.overflowY = modalOpen ? "hidden" : "auto";
         return () => {
-            document.body.style.overflow = "auto";
+            document.body.style.overflowY = "auto";
         };
     }, [modalOpen]);
-
+    
     const dropIn = {
         hidden: {
             y: '-100vh',
@@ -38,18 +44,10 @@ function Modal({handleClose, modalOpen}) {
 
     }
     const [currentIndex, setCurrentIndex] = useState(0);
-    const carouselImages = [
-        ProjectPicture.Futur1, 
-        ProjectPicture.Futur2, 
-        // ProjectPicture.Futur3, 
-        ProjectPicture.Futur4,
-        ProjectPicture.Futur5
-    ];
-
     
     const nextImage = () => {
         setCurrentIndex((prevIndex) => {
-            const newIndex = (prevIndex + 1) % carouselImages.length;
+            const newIndex = (prevIndex + 1) % src.length;
             console.log('Image suivante:', newIndex);
             return newIndex;
         });
@@ -57,7 +55,7 @@ function Modal({handleClose, modalOpen}) {
     
     const prevImage = () => {
         setCurrentIndex((prevIndex) => {
-            const newIndex = prevIndex === 0 ? carouselImages.length - 1 : prevIndex - 1;
+            const newIndex = prevIndex === 0 ? src.length - 1 : prevIndex - 1;
             console.log('Image précédente:', newIndex);
             return newIndex;    
         });
@@ -66,31 +64,22 @@ function Modal({handleClose, modalOpen}) {
     return (
         <Backdrop onClick={handleClose}>
             <motion.div
-                className="max-w-[90vw] w-[700px] flex justify-center items-center max-h-[80vh] m-auto p-0 z-40 rounded-2xl flex-col bg-shadow shadow-2xl"
+                className="max-w-[80vw] w-[700px] overflow-y-auto flex justify-center items-center max-h-[80vh] m-auto p-0 z-40 rounded-2xl flex-col bg-shadow shadow-2xl"
                 variants={dropIn}
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className='relative w-full h-[500px] rounded-xl overflow-hidden'>
                 <motion.img
                     key={currentIndex}
-                    src={carouselImages[currentIndex]}
+                    src={src[currentIndex]}
                     className='absolute w-full h-full object-cover aspect-3/2'
                     initial={{ opacity: 0, filter: "blur(10px)" }}
                     animate={{ opacity: 1, filter: "blur(0px)" }}
                     exit={{ opacity: 0, filter: "blur(10px)" }}
                     transition={{ duration: 0.6, ease: "easeInOut" }}
                 />
-                    {/* <div className="absolute left-4 top-1/2 -translate-y-1/2 p-2 z-20 
-                        rounded-full bg-white/90 bg-opacity-30 backdrop-blur-lg">
-                        <MdArrowBackIosNew fill="black" size={35} />
-
-                    </div>
-                    <div className='rounded-full bg-white/30 cursor-default p-2 z-30 absolute backdrop-blur-xl right-4 top-1/2 -translate-y-1/2' onClick={nextImage}>
-                        <MdArrowForwardIos fill='black' size={'35px'}/>
-
-                    </div> */}
                     <div className='absolute top-5 left-5 backdrop-blur-lg'>
-                    <h2 className="absolute top-5 left-5 text-white text-2xl font-bold z-10">FUTURE</h2>
+                    <h2 className="absolute top-5 left-5 text-white text-2xl font-bold z-10">{title}</h2>
 
                     </div>
                 </div>
@@ -99,7 +88,7 @@ function Modal({handleClose, modalOpen}) {
                         <div className='p-2 bg-primary mr-2 rounded-full cursor-pointer' onClick={() => prevImage()}>
                             <MdArrowBackIosNew fill="black" size={25} />
                         </div>
-                            {carouselImages.map((_, index) => (
+                            {src.map((_, index) => (
                                 <motion.div
                                     key={index}
                                     className="h-2 rounded-full bg-primary"
@@ -116,31 +105,30 @@ function Modal({handleClose, modalOpen}) {
                 <div className='w-full text-left p-4 overflow-y-auto scrollbar-hide'>
                     <div className='mb-5'>
                         <h2 className='text-3xl mb-4 font-bold'>Description</h2>
-                        <p className=''>FUTURE est une plateforme combinant cryptomonnaies et NFTs qui offre aux utilisateurs la possibilité de découvrir, acheter et suivre la valeur des NFTs.
-                            Les fonctionnalités incluent la création d’une galerie personnalisée et de suivi de la performance de leur investissement lié à l’Ethereum.
-                            L’orquestration se divise en 2 applications, une en Symfony (API et administration) et l’autre en Angular (client).
-                            L'application web est totalement responsive et adapaté à un usage mobile.
+                        <p className=''>{description}
                         </p><br></br>
                     </div>
                     <div>
                         <h2 className='text-3xl font-bold mb-5 mt-5'>Stack</h2>
                         <div className='flex gap-5 items-center'>
-                            <LogoStack logo={Logos.SymfonyLight} size={50}/>
-                            <LogoStack logo={Logos.AngularLight} size={50}/>
-                            <LogoStack logo={Logos.BootstrapLight} size={50}/>
-                            <LogoStack logo={Logos.MysqlLight} size={40}/>
+                            {stack.map((item, index) => (
+                                <LogoStack key={index} logo={item} size={50}/>
+                            ))}
                         </div>
                     </div>
                     <div>
-                        <h2 className='text-3xl font-bold mb-5 mt-5'>Pincipales fonctionnalités</h2>
-                        <div className='flex gap-5 items-center'>
-                        . CRUD complet des NFTs <br></br>
-                        . Intégration API Ethereum
-                        . Suivi des investissements ( chart )
-                        . Galerie personnalisée
-                        . Dashboard interactif
-                        . Expérience responsive
-                        </div>
+                        <h2 className='text-3xl font-bold mb-5 mt-5'>Main features</h2>
+                        <div className='flex gap-5 flex-col'>
+                        {Array.isArray(texts) && texts.length > 0 ? (
+                            texts.map((item, index) => (
+                                <React.Fragment key={index}>
+                                    <span>- {item}</span>
+                                </React.Fragment>
+                            ))
+                        ) : (
+                            <p>No features available.</p>
+                        )}
+                    </div>
                     </div>
                 </div>
                 {/* <div className="p-4 text-center">
