@@ -1,9 +1,9 @@
 import React from 'react';
 import LogoStack from './LogoStack';
 
-export default function Project({ title, alt, description, src, stack1, stack2, stack3, stack4 }) {
+export default function Project({ title, alt, description, src, stack1, stack2, stack3, stack4, onClick }) {
     return (
-        <div>
+        <div onClick={onClick}>
             <div className="relative h-[200px] w-[400px] rounded-2xl overflow-hidden group">
                 <img
                     src={src}

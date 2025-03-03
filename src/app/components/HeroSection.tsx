@@ -2,7 +2,6 @@
 import { useState } from 'react';  
 import { motion } from 'framer-motion';
 import useMousePosition from '../utils/useMousePosition';
-import ProjectsSection from '../section/ProjectSection';
 
 export default function HeroSection() {
     const [isHovered, setIsHovered] = useState(false);

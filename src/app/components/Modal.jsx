@@ -2,9 +2,10 @@
 import React from 'react'
 import Backdrop from './Backdrop'
 import { motion } from 'framer-motion'
-import {ProjectPicture} from '../utils/LogoDatas'
+import {Logos, ProjectPicture} from '../utils/LogoDatas'
 import { useState, useEffect } from 'react'
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
+import LogoStack from './LogoStack'
 
 function Modal({handleClose, modalOpen}) {
 
@@ -122,7 +123,24 @@ function Modal({handleClose, modalOpen}) {
                         </p><br></br>
                     </div>
                     <div>
-                        <h2 className='text-3xl font-bold'>Stack</h2>
+                        <h2 className='text-3xl font-bold mb-5 mt-5'>Stack</h2>
+                        <div className='flex gap-5 items-center'>
+                            <LogoStack logo={Logos.SymfonyLight} size={50}/>
+                            <LogoStack logo={Logos.AngularLight} size={50}/>
+                            <LogoStack logo={Logos.BootstrapLight} size={50}/>
+                            <LogoStack logo={Logos.MysqlLight} size={40}/>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 className='text-3xl font-bold mb-5 mt-5'>Pincipales fonctionnalités</h2>
+                        <div className='flex gap-5 items-center'>
+                        . CRUD complet des NFTs <br></br>
+                        . Intégration API Ethereum
+                        . Suivi des investissements ( chart )
+                        . Galerie personnalisée
+                        . Dashboard interactif
+                        . Expérience responsive
+                        </div>
                     </div>
                 </div>
                 {/* <div className="p-4 text-center">

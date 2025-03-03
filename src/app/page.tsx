@@ -20,9 +20,9 @@ export default function Home() {
   }, [pathname]);
 
   return (
-    <>
+    <div className='w-screen flex flex-col'>
       <div className='max-w-full'>
-        <RevealName />
+        {/* <RevealName /> */}
         {/* <p className=' text-[60px] top-[100px] left-[100px] text-white z-10 font-avantGarde font-bold absolute'>Hello .<span className='bg-white h-8 w-8 rounded-full z-10'></span></p> */}
         {/* Texte principal en arrière-plan */}
         <div className="absolute z-30">
@@ -50,6 +50,6 @@ export default function Home() {
       <HeroSection>
       </HeroSection>
       <ProjectsSection/>
-    </>
+    </div>
   );
 }

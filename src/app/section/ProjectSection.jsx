@@ -68,7 +68,7 @@ export default function ProjectsSection() {
 
   
   return (
-    <div className='text-textprimary h-screen w-full max-w-full'>
+    <div className='text-textprimary h-screen w-screen max-w-full overflow-x-hidden bg-red-300'>
         {/* <Subtitle>{`< Projects />`}</Subtitle> */}
         <div className=" flex flex-wrap w-full max-w-full items-stretch justify-evenly duration-0.25"> 
 
@@ -80,6 +80,7 @@ export default function ProjectsSection() {
                 stack1={Logos.SymfonyLight}
                 stack2={Logos.BootstrapLight}
                 stack3={Logos.AngularLight}
+                onClick={() => modalOpen ? close() : open()}
             />
 
             <Project
@@ -89,6 +90,7 @@ export default function ProjectsSection() {
             src={'/assets/project/entracte1.png'}
             stack1={Logos.JsLight}
             stack2={Logos.SassLight}
+            onClick={() => modalOpen ? close() : open()}
             />
 
             <Project
@@ -100,14 +102,15 @@ export default function ProjectsSection() {
             stack2={Logos.JqueryLight}
             stack3={Logos.ApiLight}
             stack4={Logos.GoogleLight}
+            onClick={() => modalOpen ? close() : open()}
             />
 
       {modalOpen && <Modal modalOpen={modalOpen} handleClose={close}/>}
         </div>
         <br/><br/>
-        <div className='z-30'>
+        {/* <div className='z-30'>
         <motion.button whileHover={{ scale: 1.1}} whileTap={{scale: 0.9}} onClick={() => modalOpen ? close() : open()} className='bg-green-500'>Launch modal</motion.button>
-      </div>
+      </div> */}
     {/* <AnimatePresence initial={false} exitBeforeEnter={true} onExitComplete={() => null}>
 
     </AnimatePresence> */}
