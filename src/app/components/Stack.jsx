@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-function Stack({svg, skew, gradient}) {
+function Stack({svg, skew, gradient, delay = 0}) {
     return (
         <motion.div
         className={`h-20 w-20 ${gradient} shadow-customStack rounded-2xl flex justify-center items-center`}
@@ -10,7 +10,8 @@ function Stack({svg, skew, gradient}) {
         transition={{
             duration: 7,
             ease: 'easeInOut',
-            repeat: Infinity
+            repeat: Infinity,
+            delay
         }}
     >
         {svg}
