@@ -12,7 +12,7 @@ export default function HeroSection() {
         <>
         <main className="relative h-min-full h-screen w-full flex items-center justify-center text-[#afa18f] text-4xl leading-[66px] cursor-default">
             <p className="absolute z-0 max-w-[1000px] p-10 text-left font-avantGarde text-6xl font-bold">
-            Joris Bertier <br></br>I develop <span className="text-[#ec4e39]">{'{things}'} </span> for the web.
+            Joris Bertier <br></br>I develop <span className="text-[#ec4e39]">{'{*****}'} </span> for the web.
             </p>
 
             {/* <motion.div className='flex flex-col z-20'                     onMouseEnter={() => setIsHovered(true)} 
@@ -44,7 +44,7 @@ export default function HeroSection() {
                     onMouseEnter={() => setIsHovered(true)} 
                     onMouseLeave={() => setIsHovered(false)}
                 >
-                    Joris Bertier <br></br>I develop <span className="text-[#afa18f]">{'{things}'} </span> for the web.
+                    Joris Bertier <br></br>I develop <span className=" text-black">{'{things}'} </span> for the web.
                 </p>
             </motion.div>
         </main>
