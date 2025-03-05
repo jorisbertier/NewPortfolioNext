@@ -32,6 +32,19 @@ export const Logos = {
     MysqlLight: "/assets/logoStack/mysql-light.png",
 };
 
+export const ChatbotLogo = {
+    chatbot: "/assets/chat.png",
+}
+
+export const Contact = {
+    gitDark: "/assets/contact/github-dark.png",
+    gitGreen: "/assets/contact/icons8-github-60.png",
+    linkedin: "/assets/contact/icons8-linkedin-50.png",
+    mail: "/assets/contact/icons8-mail-48.png",
+    linkedinDark: "/assets/contact/linkedin-dark.png",
+    send: "/assets/contact/send-light.png",
+}
+
 export const ProjectPicture = {
     Futur1: "/assets/project/future.png",
     Futur2: "/assets/project/future15.png",
