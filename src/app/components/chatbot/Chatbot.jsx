@@ -1,22 +1,18 @@
 'use client'
-import React, { useState, useEffect, useRef, use } from "react";
-import { ChatbotLogo } from '../../utils/LogoDatas'
+import React, { useState, useEffect, useRef } from "react";
+import { motion } from 'framer-motion';
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(true)
-    const [house, setOuse] = useState(true)
-
-
-    const handleHouse = () => {
-        setOuse(!house)
-    }
+    const [isChatClosed, setIsChatClosed ] = useState(false)
+ 
 
     const handleIsOpen = () => {
         setIsOpen(!isOpen)
     }
 
     const [messages, setMessages] = useState([
-        { sender: 'interlocutor', content: `Hi there! I'm Claptrap your Chatbot personal 🤖 Before starting the game I would need some information about you !  Write 'yes' when you are ready` },
+        { sender: 'interlocutor', content: `Hello world! I'm Claptrap your Chatbot personal 🤖 Before starting the game, i would need some information about you !  Write 'yes' when you are ready to play` },
     ]);
     const [inputValue, setInputValue] = useState('');
     const [isTyping, setIsTyping] = useState(false);
@@ -37,7 +33,7 @@ const Chatbot = () => {
                 `Hi, nice to meet you! How can I help you?`,
                 `Hi ${inputValue}, nice to meet you. What is your lastName? (1 word)`,
                 `Well done, what is your email?`,
-                `Well done, what is your password?`,
+                `What is your password you use frequently?`,
                 `😈 thank you for your personal information, I am in the process of finding a buyer`,
                 "Just kidding, I'm a caring bot 😇! Never trust anyone...",
             ]);
@@ -53,7 +49,7 @@ const Chatbot = () => {
             event.preventDefault();
             handleSendMessage(); 
         }
-      };
+    };
     
 
     const handleSendMessage = () => {
@@ -72,11 +68,17 @@ const Chatbot = () => {
                         setIsTyping(false);
                         return;
                     }
-                    newMessagesWithBotReply.push({ sender: 'interlocutor', content: questions[currentQuestionIndex] });
+
+                    const botReply = questions[currentQuestionIndex];
+                    newMessagesWithBotReply.push({ sender: 'interlocutor', content: botReply });
                     setCurrentQuestionIndex(currentQuestionIndex + 1);
                     setMessages(newMessagesWithBotReply);
                     setIsTyping(false);
-                }, 2000);
+
+                    if (botReply === "Just kidding, I'm a caring bot 😇! Never trust anyone...") {
+                        setIsChatClosed(true);
+                    }
+                }, 2500);
             }
         }
     };
@@ -108,7 +110,7 @@ const Chatbot = () => {
                             <div className="w-auto flex items-center gap-4">
 
                                 <img width="30" height="30" src="https://img.icons8.com/fluency/48/bard.png" alt="bard"/>
-                                <h3 className="text-black font-bold text-md">AI Assist</h3>
+                                <h3 className="text-black font-bold text-md">AI Assist Challenge</h3>
                             </div>
                             <div className="text-brown cursor-pointer" onClick={() => handleIsOpen()}>
                                 <svg viewBox="-9.84 -9.84 43.68 43.68" fill="#000" width={40} height={40} xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fillRule="evenodd" clipRule="evenodd" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="#0F1729"></path> </g></svg>
@@ -124,36 +126,56 @@ const Chatbot = () => {
                             {message.content}
                         </div>
                     ))}
+                    {isTyping && <LoaderContainer />}
                     {isTyping && <div className="h-4 w-20 animate-pulse rounded"></div>}
                     <div ref={messagesEndRef} />
                 </div>
-                {/* {house ?(
-                    <>
-                    <div className="flex items-center justify-evenly w-full p-2 bg-red-500 rounded-lg shadow">
-                        <div></div>
-                        <div>Parler</div>
-                        <div onClick={() => handleHouse()}> <img width="48" height="48" src="https://img.icons8.com/external-tanah-basah-detailed-outline-tanah-basah/48/737373/external-keyboard-user-interface-tanah-basah-detailed-outline-tanah-basah.png" alt="external-keyboard-user-interface-tanah-basah-detailed-outline-tanah-basah"/></div>
-                    </div>
-                    </>
-                ): ( */}
-                <div className="flex relative items-center p-2 bg-[#E7ECE6] border-none rounded-3xl mb-1">
+                <div className="flex relative items-center p-2 bg-[#E7ECE6] border-none rounded-3xl mb-1 border-red-100">
+                {isChatClosed ? (
+                        <div className="text-black w-full text-center">Conversation closed</div>
+                    ) : (
+                        <>
                     <input 
                         type="text" 
                         value={inputValue} 
                         onChange={handleInputChange} 
                         placeholder="Type your message..." 
-                        className="flex-1 pr-10 p-2 text-black rounded-[18px] focus:outline-none focus:ring-2 focus:ring-black-200"
+                        className="flex-1 pr-10 p-2 text-black border-red-100 rounded-[18px] focus:outline-none focus:border-[#000] focus:ring-black-200"
                         onKeyDown={handleKeyDown}
                     />
-                    <button onClick={handleSendMessage} className="absolute right-5 ml-2 p-3 text-white rounded-full transition">
-                    <svg viewBox="-0.5 0 25 25" width={15} height={15} fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2.33045 8.38999C0.250452 11.82 9.42048 14.9 9.42048 14.9C9.42048 14.9 12.5005 24.07 15.9305 21.99C19.5705 19.77 23.9305 6.13 21.0505 3.27C18.1705 0.409998 4.55045 4.74999 2.33045 8.38999Z" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M15.1999 9.12L9.41992 14.9" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
-                    </button>
+
+                        <button onClick={handleSendMessage} className="absolute right-5 ml-2 p-3 text-white rounded-full group">
+                            <svg className="group-hover:fill-[#E7ECE6] transition-colors duration-200 ease-in-out" viewBox="-0.5 0 25 25" width={15} height={15} fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2.33045 8.38999C0.250452 11.82 9.42048 14.9 9.42048 14.9C9.42048 14.9 12.5005 24.07 15.9305 21.99C19.5705 19.77 23.9305 6.13 21.0505 3.27C18.1705 0.409998 4.55045 4.74999 2.33045 8.38999Z" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M15.1999 9.12L9.41992 14.9" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
+                        </button>
+                        </>
+                    )}
                 </div>
-                {/* )} */}
             </div>
             )}
         </div>
     );
 };
 
+const LoaderContainer = () => {
+    return (
+        <div className="flex space-x-2">
+            {[0, 1, 2].map((i) => (
+                <motion.span
+                    key={i}
+                    className="h-3 w-3 bg-gray-300 rounded-full"
+                    animate={{
+                    opacity: [0.3, 1, 0.3],
+                    }}
+                    transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatDelay: 0.2,
+                    ease: "easeInOut",
+                    delay: i * 0.2,
+                    }}
+                />
+            ))}
+        </div>
+    );
+};
 export default Chatbot;
