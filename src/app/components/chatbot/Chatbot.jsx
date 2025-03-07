@@ -16,7 +16,7 @@ const Chatbot = () => {
     }
 
     const [messages, setMessages] = useState([
-        { sender: 'interlocutor', content: `Hi there! I'm Claptrap your Chatbot personal 🤖 I need your personal information which I will then encrypt to show you the extent of the possibilities offered by the web !! Are you ready to discover the universe? Write 'yes' when you are ready` },
+        { sender: 'interlocutor', content: `Hi there! I'm Claptrap your Chatbot personal 🤖 Before starting the game I would need some information about you !  Write 'yes' when you are ready` },
     ]);
     const [inputValue, setInputValue] = useState('');
     const [isTyping, setIsTyping] = useState(false);
@@ -48,6 +48,14 @@ const Chatbot = () => {
         setInputValue(event.target.value);
     };
 
+    const handleKeyDown = (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            handleSendMessage(); 
+        }
+      };
+    
+
     const handleSendMessage = () => {
         if (inputValue.trim() !== '') {
             const newMessages = [...messages, { sender: 'user', content: inputValue }];
@@ -58,7 +66,7 @@ const Chatbot = () => {
                 setIsTyping(true);
                 setTimeout(() => {
                     let newMessagesWithBotReply = [...newMessages];
-                    if (currentQuestionIndex === 0 && inputValue.trim() !== "yes") {
+                    if (currentQuestionIndex === 0 && inputValue.trim().toLowerCase() !== "yes") {
                         newMessagesWithBotReply.push({ sender: 'interlocutor', content: "Please enter 'yes' to play the game!" });
                         setMessages(newMessagesWithBotReply);
                         setIsTyping(false);
@@ -78,19 +86,24 @@ const Chatbot = () => {
         <div>
         {!isOpen ? (
                 
-            <div className="fixed bottom-10 z-30 right-10 bg-green-300 p-4 flex justify-center items-center rounded-full" onClick={() => handleIsOpen()}>
+            <div className="fixed bottom-10 z-30 h-32 w-32 cursor-pointer right-10 p-4 flex justify-center items-center rounded-full" onClick={() => handleIsOpen()}>
                 {/* <img src={ChatbotLogo.chatbot} width={48} height={48} /> */}
-                <video 
-                src="/assets/video.mp4" 
+                {/* <video 
+                src="/assets/videoblack.mp4" 
                 autoPlay 
                 loop 
                 muted
-                className="w-20 h-20 rounded-full"
+                className="z-40 rounded-full"
+                /> */}
+                <img 
+                    src="/assets/videoblack.gif" 
+                    alt="Chatbot animation" 
+                    className="z-40 rounded-full"
                 />
             </div>
             ) : (
-                <div className="flex flex-col h-[500px] w-[500px] z-30 right-10 p-0 bg-[#E7ECE6] rounded-3xl shadow-md fixed bottom-10">
-                    <div className="h-10 w-full bg-[#E7ECE6] absolute -mt-0 rounded-3xl flex items-center justify-between">
+                <div className="flex flex-col h-[490px] w-[500px] z-30 right-10 p-0 bg-[#E7ECE6] rounded-b-3xl shadow-md fixed bottom-10">
+                    <div className="h-10 w-full bg-[#E7ECE6] absolute -mt-10 rounded-t-3xl flex items-center justify-between">
                         <div className="flex justify-between items-center w-full mr-5 ml-5">
                             <div className="w-auto flex items-center gap-4">
 
@@ -102,16 +115,16 @@ const Chatbot = () => {
                             </div>
                         </div>
                     </div>
-                <div className="flex-1 overflow-y-auto space-y-4 p-4">
+                <div className="flex-1 flex flex-col overflow-y-auto space-y-4 p-4">
                     {messages.map((message, index) => (
                         <div 
                             key={index} 
-                            className={`p-3 rounded-lg mt-8 max-w-[70%] font-thin text-[14px] bg-white text-black ${message.sender === 'interlocutor' ? ' self-start' : ' text-black self-end'}`}
+                            className={`p-3 rounded-lg mt-8 max-w-[70%] font-thin text-[14px] text-black ${message.sender === 'interlocutor' ? 'bg-gray-300 self-start' : ' bg-white text-black self-end'}`}
                         >
                             {message.content}
                         </div>
                     ))}
-                    {isTyping && <div className="h-4 w-20 bg-teal-500 animate-pulse rounded"></div>}
+                    {isTyping && <div className="h-4 w-20 animate-pulse rounded"></div>}
                     <div ref={messagesEndRef} />
                 </div>
                 {/* {house ?(
@@ -130,8 +143,9 @@ const Chatbot = () => {
                         onChange={handleInputChange} 
                         placeholder="Type your message..." 
                         className="flex-1 pr-10 p-2 text-black rounded-[18px] focus:outline-none focus:ring-2 focus:ring-black-200"
+                        onKeyDown={handleKeyDown}
                     />
-                    <button onClick={handleSendMessage} className="absolute right-5 ml-2 p-3 text-white rounded-full hover:bg-teal-600 transition">
+                    <button onClick={handleSendMessage} className="absolute right-5 ml-2 p-3 text-white rounded-full transition">
                     <svg viewBox="-0.5 0 25 25" width={15} height={15} fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2.33045 8.38999C0.250452 11.82 9.42048 14.9 9.42048 14.9C9.42048 14.9 12.5005 24.07 15.9305 21.99C19.5705 19.77 23.9305 6.13 21.0505 3.27C18.1705 0.409998 4.55045 4.74999 2.33045 8.38999Z" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M15.1999 9.12L9.41992 14.9" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
                     </button>
                 </div>
