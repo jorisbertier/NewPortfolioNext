@@ -17,7 +17,7 @@ const Chatbot = () => {
     const [inputValue, setInputValue] = useState('');
     const [isTyping, setIsTyping] = useState(false);
     const [questions, setQuestions] = useState([
-        "First all, what's your first name? (1 word)",
+        "First all, what's your first name?",
     ]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     
@@ -31,11 +31,11 @@ const Chatbot = () => {
         if (currentQuestionIndex === 1) {
             setQuestions([
                 `Hi, nice to meet you! How can I help you?`,
-                `Hi ${inputValue}, nice to meet you. What is your lastName? (1 word)`,
+                `Hi ${inputValue}, nice to meet you. What is your lastName?`,
                 `Well done, what is your email?`,
                 `What is your password you use frequently?`,
                 `😈 thank you for your personal information, I am in the process of finding a buyer`,
-                "Just kidding, I'm a caring bot 😇! Never trust anyone...",
+                "Just kidding, I'm a caring bot 😇! Never trust anyone, no matter how friendly they are. You never know who is hiding behind the screen, ready to take advantage of your naivety for their own benefit. Don't be easy prey in this digital jungle",
             ]);
         }
     }, [inputValue, currentQuestionIndex]);
@@ -63,7 +63,14 @@ const Chatbot = () => {
                 setTimeout(() => {
                     let newMessagesWithBotReply = [...newMessages];
                     if (currentQuestionIndex === 0 && inputValue.trim().toLowerCase() !== "yes") {
-                        newMessagesWithBotReply.push({ sender: 'interlocutor', content: "Please enter 'yes' to play the game!" });
+                        newMessagesWithBotReply.push({ sender: 'interlocutor', content: "Please enter 'yes' to play the game !" });
+                        setMessages(newMessagesWithBotReply);
+                        setIsTyping(false);
+                        return;
+                    }
+                    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                    if (currentQuestionIndex === 3 && !emailRegex.test(inputValue.trim().toLowerCase())) {
+                        newMessagesWithBotReply.push({ sender: 'interlocutor', content: "Please enter a valid email !" });
                         setMessages(newMessagesWithBotReply);
                         setIsTyping(false);
                         return;
@@ -75,7 +82,7 @@ const Chatbot = () => {
                     setMessages(newMessagesWithBotReply);
                     setIsTyping(false);
 
-                    if (botReply === "Just kidding, I'm a caring bot 😇! Never trust anyone...") {
+                    if (botReply === "Just kidding, I'm a caring bot 😇! Never trust anyone, no matter how friendly they are. You never know who is hiding behind the screen, ready to take advantage of your naivety for their own benefit. Don't be easy prey in this digital jungle") {
                         setIsChatClosed(true);
                     }
                 }, 2500);
