@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect, useRef } from "react";
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(true)
@@ -104,7 +104,13 @@ const Chatbot = () => {
                 />
             </div>
             ) : (
-                <div className="flex flex-col h-[490px] w-[500px] z-30 right-10 p-0 bg-[#E7ECE6] rounded-b-3xl shadow-md fixed bottom-10">
+                <AnimatePresence>
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.4, y: 50 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.4, y: 50 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className="flex flex-col h-[490px] w-[500px] z-30 right-10 p-0 bg-[#E7ECE6] rounded-b-3xl shadow-md fixed bottom-10">
                     <div className="h-10 w-full bg-[#E7ECE6] absolute -mt-10 rounded-t-3xl flex items-center justify-between">
                         <div className="flex justify-between items-center w-full mr-5 ml-5">
                             <div className="w-auto flex items-center gap-4">
@@ -150,7 +156,8 @@ const Chatbot = () => {
                         </>
                     )}
                 </div>
-            </div>
+            </motion.div>
+            </AnimatePresence>
             )}
         </div>
     );
