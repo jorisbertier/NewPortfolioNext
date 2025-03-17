@@ -16,7 +16,7 @@ function Stack({svg, skew, gradient, startY = 10, stack}) {
         whileHover={{ y: 0 }} 
     >
         {svg}
-        <div className='absolute z-10 bg-black/50 w-auto text-white font-normal -bottom-5 pr-2 pl-2 rounded-md opacity-0  group-hover:opacity-100 transition-opacity duration-300'>{stack}</div>
+        <div className='absolute z-10 bg-black/50 w-auto text-white text-sm font-normal -bottom-5 pr-2 pl-2 rounded-md opacity-0  group-hover:opacity-100 transition-opacity duration-300'>{stack}</div>
     </motion.div>
     )
 }
