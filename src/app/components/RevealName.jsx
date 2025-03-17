@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function RevealName({name, color}) {
     return (
-        <section className="px-8 py-20 z-20 text-[#fff] w-[300px]">
+        <section className="px-8 py-20 z-20 text-brown w-[300px]">
         {/* <FlipLink href="#">Joris</FlipLink> */}
         {/* <FlipLink href="#">Linkedin</FlipLink> */}
         {/* <FlipLink href="#">Facebook</FlipLink> */}
@@ -22,7 +22,7 @@ export default function RevealName({name, color}) {
         initial="initial"
         whileHover="hovered"
         href={href}
-        className="relative block overflow-hidden w-auto whitespace-nowrap text-[60px] font-avantGarde font-bold"
+        className="relative z-30 block overflow-hidden w-auto whitespace-nowrap text-[60px] font-avantGarde font-bold"
         style={{
             lineHeight: 1,
         }}

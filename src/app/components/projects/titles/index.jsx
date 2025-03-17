@@ -25,9 +25,9 @@ function Title({ data, setSelectedProject }) {
     const clip = useMotionTemplate`inset(0 ${clipProgress}% 0 0)`;
 
     return (
-        <div ref={container} className="border-b border-[rgba(183,171,152,0.25)] relative z-10 cursor-default">
+        <div ref={container} className="border-b border-[rgba(183,171,152,0.25)] relative z-10 cursor-pointer w-full">
             <div 
-                className="inline-block pl-[10%]" 
+                className="inline-block pl-[10%] w-full" 
                 onMouseOver={() => setSelectedProject(i)}
                 onMouseLeave={() => setSelectedProject(null)}
             >

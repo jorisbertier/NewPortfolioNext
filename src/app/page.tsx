@@ -56,7 +56,10 @@ export default function Home() {
       <ProjectsSection/>
       <StackSection />
       {/* <AboutSection/> */}
-      {/* <Projects/> */}
+      <div className='relative'>
+      <Projects/>
+
+      </div>
       <Chatbot/>
     </div>
   );
