@@ -5,7 +5,7 @@ import Descriptions from './descriptions';
 
 const data = [
     {
-        title: "Ford",
+        title: "NFT Marketplace",
         description: "Working on the Next-Generation HMI Experience without no driving experience.",
         speed: 0.5
     },
@@ -37,15 +37,11 @@ const data = [
 ]
 
 export default function Projects() {
-    const [selectedProject, setSelectedProject] = useState(null);
-    
+    const [selectedProject, setSelectedProject] = useState(null)
     return (
-        <div 
-            className="absolute z-10 w-full"
-            style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' }}
-        >
-            <Titles data={data} setSelectedProject={setSelectedProject} />
-            <Descriptions data={data} selectedProject={selectedProject} />
+        <div className="absolute z-10 w-full">
+            <Titles data={data} setSelectedProject={setSelectedProject}/>
+            <Descriptions data={data} selectedProject={selectedProject}/>
         </div>
-    );
+    )
 }

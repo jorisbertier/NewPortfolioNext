@@ -11,6 +11,7 @@ import ProjectsSection from '../app/section/ProjectSection'
 import StackSection from '../app/section/StackSection'
 import AboutSection from '../app/section/AboutSection'
 import Chatbot from '../app/components/chatbot/Chatbot'
+import Projects from '../app/components/projects/index'
 
 export default function Home() {
   const [isActive, setIsActive] = useState(false);
@@ -54,7 +55,8 @@ export default function Home() {
       </HeroSection>
       <ProjectsSection/>
       <StackSection />
-      <AboutSection/>
+      {/* <AboutSection/> */}
+      {/* <Projects/> */}
       <Chatbot/>
     </div>
   );
