@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import useMousePosition from '../utils/useMousePosition';
 import StackSection from '../section/StackSection';
 import Projects from './projects';
+import RevealName from './RevealName';
 
 export default function HeroSection() {
     const [isHovered, setIsHovered] = useState(false);
@@ -21,6 +22,7 @@ export default function HeroSection() {
             </div>
             {/* <StackSection/> */}
             <div className='z-40 m-0 p-0'>
+                <RevealName name={'Works'}/>
                 <Projects/>
             </div>
 

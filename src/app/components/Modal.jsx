@@ -68,16 +68,16 @@ function Modal({handleClose, modalOpen,
                 variants={dropIn}
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className='relative w-full h-[500px] rounded-xl overflow-hidden'>
-                <motion.img
-                    key={currentIndex}
-                    src={src[currentIndex]}
-                    className='absolute w-full h-full object-cover aspect-3/2'
-                    initial={{ opacity: 0, filter: "blur(10px)" }}
-                    animate={{ opacity: 1, filter: "blur(0px)" }}
-                    exit={{ opacity: 0, filter: "blur(10px)" }}
-                    transition={{ duration: 0.6, ease: "easeInOut" }}
-                />
+                <div className='relative w-full h-[800px] bg-black rounded-xl overflow-hidden'>
+                    <motion.img
+                        key={currentIndex}
+                        src={src[currentIndex]}
+                        className='absolute w-full h-full object-fill aspect-3/2'
+                        initial={{ opacity: 0, filter: "blur(10px)" }}
+                        animate={{ opacity: 1, filter: "blur(0px)" }}
+                        exit={{ opacity: 0, filter: "blur(10px)" }}
+                        transition={{ duration: 0.6, ease: "easeInOut" }}
+                    />
                     <div className='absolute top-5 left-5 backdrop-blur-lg'>
                     <h2 className="absolute top-5 left-5 text-white text-2xl font-bold z-10">{title}</h2>
 
@@ -94,7 +94,7 @@ function Modal({handleClose, modalOpen,
                                     className="h-2 rounded-full bg-primary"
                                     animate={index === currentIndex ? { width: 20 } : { width: 8 }}
                                     transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                                    style={{ width: 8 }} // Valeur initiale
+                                    style={{ width: 8 }}
                                 />
                             ))}
                         <div className='p-2 bg-primary ml-2 rounded-full cursor-pointer' onClick={() => nextImage()}>
@@ -102,14 +102,14 @@ function Modal({handleClose, modalOpen,
                         </div>
                     </div>
                 </div>
-                <div className='w-full text-left p-4 overflow-y-auto scrollbar-hide'>
+                <div className='w-full text-left p-4 overflow-y-auto'>
                     <div className='mb-5'>
                         <h2 className='text-3xl mb-4 font-bold'>Description</h2>
-                        <p className=''>{description}
-                        </p><br></br>
+                        <p className='text-base'>{description}
+                        </p>
                     </div>
                     <div>
-                        <h2 className='text-3xl font-bold mb-5 mt-5'>Stack</h2>
+                        <h2 className='text-3xl font-bold mb-5'>Stack</h2>
                         <div className='flex gap-5 items-center'>
                             {stack.map((item, index) => (
                                 <LogoStack key={index} logo={item} size={50}/>
@@ -122,11 +122,11 @@ function Modal({handleClose, modalOpen,
                         {Array.isArray(texts) && texts.length > 0 ? (
                             texts.map((item, index) => (
                                 <React.Fragment key={index}>
-                                    <span>- {item}</span>
+                                    <span className='text-base'>- {item}</span>
                                 </React.Fragment>
                             ))
                         ) : (
-                            <p>No features available.</p>
+                            <p className='text-base'>No features available.</p>
                         )}
                     </div>
                     </div>

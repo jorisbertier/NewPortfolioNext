@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Titles from './titles';
 import Descriptions from './descriptions';
+import { ProjectsData } from '@/app/utils/ProjectsData';
 
 const data = [
     {
@@ -40,8 +41,8 @@ export default function Projects() {
     const [selectedProject, setSelectedProject] = useState(null)
     return (
         <div className="relative z-30 w-full">
-            <Titles data={data} setSelectedProject={setSelectedProject}/>
-            <Descriptions data={data} selectedProject={selectedProject}/>
+            <Titles data={ProjectsData} setSelectedProject={setSelectedProject}/>
+            <Descriptions data={ProjectsData} selectedProject={selectedProject}/>
         </div>
     )
 }

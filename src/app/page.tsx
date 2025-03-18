@@ -74,13 +74,13 @@ export default function Home() {
       <PathDrawing bottom={45}/>
       <HeroSection>
       </HeroSection>
-      <ProjectsSection/>
-      <StackSection />
+      {/* <ProjectsSection/> */}
+      {/* <StackSection /> */}
       {/* <AboutSection/> */}
-      <div className='relative'>
+      {/* <div className='relative'>
       <Projects/>
 
-      </div>
+      </div> */}
       <Chatbot/>
     </div>
   );
