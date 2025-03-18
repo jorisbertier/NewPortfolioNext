@@ -27,7 +27,7 @@ function Title({ data, setSelectedProject }) {
     return (
         <div ref={container} className="border-b border-[rgba(183,171,152,0.25)] relative z-10 cursor-pointer w-full">
             <div 
-                className="inline-block pl-[10%] w-full" 
+                className="inline-block pl-[10%] h-[122px] w-full" 
                 onMouseOver={() => setSelectedProject(i)}
                 onMouseLeave={() => setSelectedProject(null)}
             >

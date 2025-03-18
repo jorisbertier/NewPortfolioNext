@@ -39,7 +39,7 @@ const data = [
 export default function Projects() {
     const [selectedProject, setSelectedProject] = useState(null)
     return (
-        <div className="absolute z-10 w-full">
+        <div className="relative z-30 w-full">
             <Titles data={data} setSelectedProject={setSelectedProject}/>
             <Descriptions data={data} selectedProject={selectedProject}/>
         </div>

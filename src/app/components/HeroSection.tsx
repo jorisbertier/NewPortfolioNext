@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import useMousePosition from '../utils/useMousePosition';
 import StackSection from '../section/StackSection';
+import Projects from './projects';
 
 export default function HeroSection() {
     const [isHovered, setIsHovered] = useState(false);
@@ -10,7 +11,7 @@ export default function HeroSection() {
     const size = isHovered ? 300 : 40;
 
     return (
-        <main className="relative h-[200vh] w-full flex flex-col text-[#afa18f] text-4xl leading-[66px] cursor-default">
+        <main className="relative h-[300vh] w-full flex flex-col text-[#afa18f] text-4xl leading-[66px] cursor-default">
             
             {/* Première section */}
             <div className="h-screen w-full flex items-center justify-center">
@@ -18,7 +19,10 @@ export default function HeroSection() {
                     I develop<br></br> <span className="text-[#ec4e39]">{'things'} </span><br></br> for <br></br>the web
                 </p>
             </div>
-            <StackSection/>
+            {/* <StackSection/> */}
+            <div className='z-40 m-0 p-0'>
+                <Projects/>
+            </div>
 
             {/* Masque dynamique superposé */}
             <motion.div 
@@ -46,15 +50,6 @@ export default function HeroSection() {
                     </p>
                 </div>
                 <div className="h-screen w-full flex items-center justify-center">
-                    <p 
-                        className="max-w-[1000px] p-10 text-left text-6xl font-bold" 
-                        onMouseEnter={() => setIsHovered(true)} 
-                        onMouseLeave={() => setIsHovered(false)}
-                    >
-
-                        Joris Bertier <br></br>
-                        I develop <span className=" text-black">{'{things}'} </span> for the web.
-                    </p>
                 </div>
             </motion.div>
 
