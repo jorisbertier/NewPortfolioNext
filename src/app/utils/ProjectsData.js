@@ -52,24 +52,24 @@ export const ProjectsData = [
     },
     {
         title: "Explore Calendar",
-        alt: "logo vue.js",
-        description: "Un portfolio interactif pour présenter les projets et les compétences.",
+        alt: "Appointment calendar",
+        description: "Explore is an application that allows for the sharing of appointment scheduling based on the employee's availability slots. The application is connected to the Google Calendar API to synchronize data. (Not available - Confidential project).",
         texts: [
-            "Animations avec GSAP",
-            "Présentation des projets en 3D",
-            "Blog intégré",
-            "Mode sombre et clair",
-            "Optimisation des performances",
-            "Déploiement sur Vercel"
+            "Authentification with OAuth",
+            "Google Calendar API integration",
+            "Creation custom calendar without library",
+            "Appointment scheduling using asynchronous requests",
+            "Dynamic employee availability management",
         ],
         src: [
-            ProjectPicture.Futur1,
-            ProjectPicture.Futur2,
-            ProjectPicture.Portfolio3
+            ProjectPicture.calendar1,
+            ProjectPicture.calendar2,
         ],
         stack: [
             Logos.SymfonyLight,
-            Logos.BootstrapLight,
+            Logos.JqueryLight,
+            Logos.ApiLight,
+            Logos.GoogleLight,
         ],
         speed: 0.5
     },

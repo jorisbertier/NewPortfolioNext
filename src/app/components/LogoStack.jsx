@@ -18,7 +18,7 @@
 // }
 import React from 'react';
 
-export default function LogoStack({ logo, size = 30 }) {
+export default function LogoStack({ logo, size = 25 }) {
     return (
         <img
         src={logo}
