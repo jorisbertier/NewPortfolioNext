@@ -13,6 +13,7 @@ export default function StackSection() {
                 {/* Frontend */}
                 <div className='flex flex-col'>
                     <h2 className="text-6xl font-bold mb-9">Front</h2>
+                    {/* <div className='h-20'></div> */}
                     <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96'>
                     <Stack
                         gradient={'bg-gradient-to-br from-blue-300 to-purple-500'}

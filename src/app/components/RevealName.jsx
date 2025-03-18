@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function RevealName({name, color}) {
+export default function RevealName({name}) {
     return (
         <section className="px-8 py-20 z-20 text-brown w-[300px]">
         {/* <FlipLink href="#">Joris</FlipLink> */}

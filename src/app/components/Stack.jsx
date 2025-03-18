@@ -5,7 +5,7 @@ function Stack({svg, skew, gradient, startY = 10, stack}) {
 
     return (
         <motion.div
-        className={`h-20 w-20 ${gradient} shadow-customStack rounded-2xl flex justify-center items-center cursor-pointer relative group transition-transform duration-300 ease-in-out hover:-translate-y-2`}
+        className={`h-20 w-20 ${gradient} shadow-customStack rounded-2xl z-30 flex justify-center items-center cursor-pointer relative group transition-transform duration-300 ease-in-out hover:-translate-y-2`}
         animate={{y : [-startY, startY, -startY]}}
         initial={{ skewX: -skew }} 
         transition={{

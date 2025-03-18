@@ -47,7 +47,6 @@ export default function Home() {
         </div>
       </div>
       <div className='max-w-full'>
-        {/* <RevealName /> */}
         {/* <p className=' text-[60px] top-[100px] left-[100px] text-white z-10 font-avantGarde font-bold absolute'>Hello .<span className='bg-white h-8 w-8 rounded-full z-10'></span></p> */}
         {/* Texte principal en arrière-plan */}
         <div className="absolute z-30">

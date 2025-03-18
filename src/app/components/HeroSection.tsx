@@ -25,6 +25,7 @@ export default function HeroSection() {
                 <RevealName name={'Works'}/>
                 <Projects/>
             </div>
+            <StackSection/>
 
             {/* Masque dynamique superposé */}
             <motion.div 
@@ -40,7 +41,7 @@ export default function HeroSection() {
                     WebkitMaskSize: "cover",
                 }}
             >
-                {/* Contenu superposé à la première section */}
+                {/* First section */}
                 <div className="h-screen w-full flex items-center justify-center">
                     <p 
                         className="max-w-[1000px] mt-20 p-10 text-[6rem] font-bold uppercase leading-[100px] text-center" 
@@ -51,7 +52,36 @@ export default function HeroSection() {
                                             <span className='text-xl tracking-[0.5em]'>Joris Bertier</span>
                     </p>
                 </div>
-                <div className="h-screen w-full flex items-center justify-center">
+                {/* Second section */}
+                <div className="h-screen w-full flex items-center justify-center bg-blue-300">
+                    Section 2
+                </div>
+                {/* Third section */}
+                <div className="h-screen w-full flex items-center justify-evenly bg-blue-300">
+                    <div className='h-20 w-20'></div>
+                    <div className='w-full flex justify-around gap-8 text-center'>
+                        <div className='flex flex-col'>
+                            <h2 className="text-6xl font-bold -mt-[110px]"
+                                onMouseEnter={() => setIsHovered(true)} 
+                                onMouseLeave={() => setIsHovered(false)}
+                            >Front
+                            </h2>
+                            <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96'>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 className="text-6xl font-bold -mt-[110px]"                                 onMouseEnter={() => setIsHovered(true)} 
+                                onMouseLeave={() => setIsHovered(false)}>Back</h2>
+                            <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96'>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 className="text-6xl font-bold -mt-[110px]"                                 onMouseEnter={() => setIsHovered(true)} 
+                                onMouseLeave={() => setIsHovered(false)}>Tools</h2>
+                            <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96'>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </motion.div>
 
