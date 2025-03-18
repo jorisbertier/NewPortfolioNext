@@ -78,9 +78,14 @@ function Modal({handleClose, modalOpen,
                         exit={{ opacity: 0, filter: "blur(10px)" }}
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                     />
-                    <div className='absolute top-5 left-5 backdrop-blur-lg'>
-                    <h2 className="absolute top-5 left-5 text-white text-2xl font-bold z-10">{title}</h2>
-
+                    {/* <h2 className="absolute left-5 top-3 rounded-full backdrop-blur-md p-2 text-black/80 text-2xl font-semibold z-10"> */}
+                    {/* <h2 className="absolute left-5 top-3 rounded-full bg-black p-2 text-white text-2xl font-semibold z-10">
+                        {title}
+                    </h2> */}
+                    <div className="absolute flex w-auto right-5 top-3 rounded-full bg-black p-2 text-black/80 text-2xl font-semibold z-10">
+                        {stack.map((item, index) => (
+                            <LogoStack key={index} logo={item} size={35}/>
+                        ))}
                     </div>
                 </div>
                 <div className='w-full flex justify-center mt-5 mb-3'>
@@ -103,6 +108,9 @@ function Modal({handleClose, modalOpen,
                     </div>
                 </div>
                 <div className='w-full text-left p-4 overflow-y-auto'>
+                    <div className='flex justify-center items-center font-bold text-4xl'>
+                        <h2>{title}</h2>
+                    </div>
                     <div className='mb-5'>
                         <h2 className='text-3xl mb-4 font-bold'>Description</h2>
                         <p className='text-base'>{description}
