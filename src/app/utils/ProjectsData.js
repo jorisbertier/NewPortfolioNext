@@ -6,18 +6,21 @@ export const ProjectsData = [
         alt: "logo symfony",
         description: "FUTURE is a platform combining cryptocurrencies and NFTs that offers users the ability to discover, buy and track the value of NFTs. Features include creating a personalized gallery and tracking the performance of their Ethereum-related investment. The orchestration is divided into 2 applications, one in Symfony (API and administration) and the other in Angular (client). The web application is fully responsive and adapted for mobile use.",
         texts: [
-            "CRUD de NFTs",
-            "Intégration API Ethereum",
-            "Suivi des investissements (graphe)",
-            "Galerie personnalisée",
-            "Tableau de bord interactif",
-            "Expérience responsive"
+            "CRUD of NFTs",
+            "Integration API Ethereum",
+            "Investment tracking (graph)",
+            "Custom gallery",
+            "Interactive dashboard",
+            "Responsive experience"
         ],
         src: [
             ProjectPicture.Futur1,
+            ProjectPicture.Futur5,
+            ProjectPicture.Futur8,
             ProjectPicture.Futur2,
             ProjectPicture.Futur4,
-            ProjectPicture.Futur5
+            ProjectPicture.Futur6,
+            ProjectPicture.Futur7,
         ],
         stack: [
             Logos.SymfonyLight,
@@ -64,6 +67,8 @@ export const ProjectsData = [
         src: [
             ProjectPicture.calendar1,
             ProjectPicture.calendar2,
+            ProjectPicture.calendar3,
+            ProjectPicture.calendar4,
         ],
         stack: [
             Logos.SymfonyLight,
@@ -74,25 +79,26 @@ export const ProjectsData = [
         speed: 0.5
     },
     {
-        title: "Nutri Track",
-        alt: "logo expo",
-        description: "Une plateforme e-commerce moderne avec gestion des produits et paiements.",
+        title: "Entract",
+        alt: "logo beer",
+        description: "Entracte is an online showcase site for a brewery and bar. The site aims to showcase the brewery and the craft beers offered by the retailer.",
         texts: [
-            "Gestion des commandes",
-            "Paiement en ligne sécurisé",
-            "Interface utilisateur dynamique",
-            "Back-office d'administration",
-            "Optimisation SEO",
-            "Expérience mobile friendly"
+            "Integration scss",
+            "Parallax effect",
+            "Responsive app",
+            "Careful typography for visual identity",
+            "Optimization SEO",
         ],
         src: [
-            ProjectPicture.Futur1,
-            ProjectPicture.Futur2,
-            ProjectPicture.Ecom3
+            ProjectPicture.Entracte1,
+            ProjectPicture.Entracte4,
+            ProjectPicture.Entracte2,
+            ProjectPicture.Entracte3,
+            ProjectPicture.Entracte5,
         ],
         stack: [
-            Logos.SymfonyLight,
-            Logos.BootstrapLight,
+            Logos.JsLight,
+            Logos.SassLight,
         ],
         speed: 0.5
     }
