@@ -33,8 +33,8 @@ const draw = {
 
 export default function ArrowDrawing({ bottom }: { bottom: number }) {
     return (
-        <div className={`absolute flex justify-center w-screen`} style={{ bottom: `${bottom}px` }}>
-            <motion.svg width="150" height="300" viewBox="0 0 200 400" fill="none">
+        <div className={`absolute flex justify-center w-screen`} style={{ bottom: `-${bottom}px` }}>
+            <motion.svg width="115" height="300" viewBox="0 0 200 400" fill="none">
                 {/* Tige de la flèche */}
                 <motion.ellipse
                     x1="100"
