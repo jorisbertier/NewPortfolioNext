@@ -53,7 +53,7 @@ function Title({ data, setSelectedProject, openModal }) {
     return (
         <div ref={container} className="border-b border-[rgba(183,171,152,0.25)] relative z-10 cursor-pointer">
             <div
-                className="inline-block pl-[10%] h-[122px] w-full"
+                className="inline-block pl-[10%] h-[122px]"
                 onMouseOver={() => setSelectedProject(i)}
                 onMouseLeave={() => setSelectedProject(null)}
                 onClick={() =>

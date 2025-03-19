@@ -18,13 +18,13 @@
 // }
 import React from 'react';
 
-export default function LogoStack({ logo, size = 25 }) {
+export default function LogoStack({ logo, size = 25, color }) {
     return (
         <img
-        src={logo}
-        alt="Logo"
-        className="px-1"
-        style={{ height: `${size}px`, width: `${size}px` }}
+            src={logo}
+            alt="Logo"
+            className="px-1"
+            style={{ height: `${size}px`, width: `${size}px` }}
         />
     );
 };

@@ -13,6 +13,7 @@ export const ProjectsData = [
             "Interactive dashboard",
             "Responsive experience"
         ],
+        descriptionShort :"NFT Marketplace & crypto platform",
         src: [
             ProjectPicture.Futur1,
             ProjectPicture.Futur5,
@@ -28,7 +29,7 @@ export const ProjectsData = [
             Logos.AngularLight,
             Logos.MysqlLight
         ],
-        speed: 0.65
+        speed: 0.6
     },
     {
         title: "Nutri Track",
@@ -42,6 +43,7 @@ export const ProjectsData = [
             "Optimisation SEO",
             "Expérience mobile friendly"
         ],
+        descriptionShort :"A daily mobile app to track macronutrients",
         src: [
             ProjectPicture.Futur1,
             ProjectPicture.Futur2,
@@ -51,10 +53,10 @@ export const ProjectsData = [
             Logos.SymfonyLight,
             Logos.BootstrapLight,
         ],
-        speed: 0.8
+        speed: 0.6
     },
     {
-        title: "Explore Calendar",
+        title: "Explore",
         alt: "Appointment calendar",
         description: "Explore is an application that allows for the sharing of appointment scheduling based on the employee's availability slots. The application is connected to the Google Calendar API to synchronize data. (Not available - Confidential project).",
         texts: [
@@ -64,6 +66,7 @@ export const ProjectsData = [
             "Appointment scheduling using asynchronous requests",
             "Dynamic employee availability management",
         ],
+        descriptionShort :"Explore: daily scheduling app",
         src: [
             ProjectPicture.calendar1,
             ProjectPicture.calendar2,
@@ -89,6 +92,7 @@ export const ProjectsData = [
             "Careful typography for visual identity",
             "Optimization SEO",
         ],
+        descriptionShort :"Online Brewery for buy beers ",
         src: [
             ProjectPicture.Entracte1,
             ProjectPicture.Entracte4,

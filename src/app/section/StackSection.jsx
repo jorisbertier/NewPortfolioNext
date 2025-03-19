@@ -9,7 +9,7 @@ export default function StackSection() {
         <div className='h-screen w-screen relative'>
             <RevealName name={'Stack .'} color={'#fff'}/>
                 
-            <div className='w-full mt-3 flex justify-evenly gap-8 text-center'>
+            <div className='w-[84%] mr-[8%] ml-[8%] mt-3 flex justify-evenly gap-8 text-center'>
                 {/* Frontend */}
                 <div className='flex flex-col'>
                     <h2 className="text-6xl font-bold mb-9">Front</h2>

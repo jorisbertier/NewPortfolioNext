@@ -1,5 +1,7 @@
 'use client';
 import React from 'react';
+import Stack from '../../Stack';
+import LogoStack from '../../LogoStack';
 
 export default function Index({ data, selectedProject }) {
 
@@ -10,7 +12,7 @@ export default function Index({ data, selectedProject }) {
     return (
         <div className="absolute top-[3px] h-full w-full z-20 pointer-events-none">
             {data.map((project, i) => {
-                const { title, description } = project;
+                const { title, descriptionShort } = project;
                 return (
                     <div 
                         key={i} 
@@ -20,9 +22,12 @@ export default function Index({ data, selectedProject }) {
                         <p className="text-[8vw] leading-[7.5vw] font-bold uppercase text-[#010101] relative z-10 m-0">
                             {crop(title, 9)}
                         </p>
-                        <p className="w-[40%] text-[1vw] font-bold">
-                            {description}
-                        </p>
+                        <div className="w-[32%] text-black text-[1vw] font-bold flex">
+                            {descriptionShort.length > 12 ? descriptionShort.slice(0, 50) : descriptionShort}
+                            {/* {project.stack.map((item, index) => (
+                                <LogoStack key={index} logo={item} size={40}/>
+                            ))} */}
+                        </div>
                     </div>
                 );
             })}

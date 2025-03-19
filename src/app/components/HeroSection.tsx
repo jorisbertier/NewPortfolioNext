@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react';  
+import { useState } from 'react';  
 import { motion } from 'framer-motion';
 import useMousePosition from '../utils/useMousePosition';
 import StackSection from '../section/StackSection';
@@ -53,15 +53,15 @@ export default function HeroSection() {
                     </p>
                 </div>
                 {/* Second section */}
-                <div className="h-screen w-full flex items-center justify-center bg-blue-300">
+                <div className="h-screen w-full flex items-center justify-center">
                     Section 2
                 </div>
                 {/* Third section */}
-                <div className="h-screen w-full flex items-center justify-evenly bg-blue-300">
-                    <div className='h-20 w-20'></div>
-                    <div className='w-full flex justify-around gap-8 text-center'>
+                <div className="h-screen w-full flex items-center justify-evenly">
+                    {/* <div className='h-20 w-20'></div> */}
+                    <div className='w-[84%] mr-[8%] ml-[8%] mt-3 flex justify-evenly gap-8 text-center'>
                         <div className='flex flex-col'>
-                            <h2 className="text-6xl font-bold -mt-[110px]"
+                            <h2 className="text-6xl font-bold -mt-[110px] -ml-20"
                                 onMouseEnter={() => setIsHovered(true)} 
                                 onMouseLeave={() => setIsHovered(false)}
                             >Front
@@ -70,13 +70,13 @@ export default function HeroSection() {
                             </div>
                         </div>
                         <div>
-                            <h2 className="text-6xl font-bold -mt-[110px]"                                 onMouseEnter={() => setIsHovered(true)} 
+                            <h2 className="text-6xl font-bold -mt-[110px] -mr-28"                                 onMouseEnter={() => setIsHovered(true)} 
                                 onMouseLeave={() => setIsHovered(false)}>Back</h2>
                             <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96'>
                             </div>
                         </div>
                         <div>
-                            <h2 className="text-6xl font-bold -mt-[110px]"                                 onMouseEnter={() => setIsHovered(true)} 
+                            <h2 className="text-6xl font-bold -mt-[110px] -mr-28"                                 onMouseEnter={() => setIsHovered(true)} 
                                 onMouseLeave={() => setIsHovered(false)}>Tools</h2>
                             <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96'>
                             </div>
