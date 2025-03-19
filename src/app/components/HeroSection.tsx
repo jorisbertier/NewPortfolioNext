@@ -15,13 +15,13 @@ export default function HeroSection() {
         <main className="relative h-[300vh] w-full flex flex-col text-[#afa18f] text-4xl leading-[66px] cursor-default">
             
             {/* Première section */}
-            <div className="h-screen w-full flex items-center justify-center">
+            <div className="h-screen w-full flex items-center justify-center" id="home">
                 <p className="leading-[100px] max-w-[1000px] uppercase p-10 text-center font-avantGarde text-[6rem] font-bold">
                     I develop<br></br> <span className="text-[#ec4e39]">{'things'} </span><br></br> for <br></br>the web
                 </p>
             </div>
             {/* <StackSection/> */}
-            <div className='z-40 m-0 p-0'>
+            <div className='z-30 m-0 p-0' id="work">
                 <RevealName name={'Works'}/>
                 <Projects/>
             </div>
@@ -48,7 +48,7 @@ export default function HeroSection() {
                         onMouseEnter={() => setIsHovered(true)} 
                         onMouseLeave={() => setIsHovered(false)}
                     >
-                                            I develop<br></br> <span className="text-[#afa18f]">{'applications'} </span><br></br> for  <br></br>the web<br></br>
+                                            I develop<br></br>{'applications'} <br></br> for  <br></br>the web<br></br>
                                             <span className='text-xl tracking-[0.5em]'>Joris Bertier</span>
                     </p>
                 </div>

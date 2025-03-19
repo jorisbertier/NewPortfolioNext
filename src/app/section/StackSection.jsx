@@ -6,8 +6,8 @@ import Stack from '../components/Stack'
 export default function StackSection() {
 
     return (
-        <div className='h-screen w-screen relative'>
-            <RevealName name={'Stack .'} color={'#fff'}/>
+        <div className='h-screen w-screen relative' id="stack">
+            <RevealName name={'Stack'} color={'#fff'}/>
                 
             <div className='w-[84%] mr-[8%] ml-[8%] mt-3 flex justify-evenly gap-8 text-center'>
                 {/* Frontend */}

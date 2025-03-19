@@ -1,3 +1,4 @@
+import { FaLinesLeaning } from "react-icons/fa6";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -13,7 +14,8 @@ export default {
         foreground: "var(--foreground)",
         brown: "#afa18f",
         shadow: '#1C1917',
-        textprimary: '#ffff'
+        textprimary: '#ffff',
+        primary: '#ec4e39'
       },
       fontFamily: {
         avantGarde: ["Avant Garde Book BT", "sans-serif"],
@@ -25,10 +27,16 @@ export default {
       },
       boxShadow: {
         customStack: '6px 6px 0 1px #1d1e30',
-      }
+      },
+      scrollBehavior: ['smooth'], 
     },
   },
   plugins: [require('tailwind-scrollbar-hide')],
+  variants: {
+    extend: {
+      scrollBehavior: ['responsive'],
+    },
+  },
   corePlugins: {
     backdropFilter: true,
   },
