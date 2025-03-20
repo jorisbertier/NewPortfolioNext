@@ -12,9 +12,9 @@ export default function StackSection() {
             <div className='w-[84%] mr-[8%] ml-[8%] mt-3 flex justify-evenly gap-8 text-center'>
                 {/* Frontend */}
                 <div className='flex flex-col'>
-                    <h2 className="text-6xl font-bold mb-9">Front</h2>
+                    <h2 className="text-6xl font-bold mb-9"></h2>
                     {/* <div className='h-20'></div> */}
-                    <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96'>
+                    <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96 pt-14'>
                     <Stack
                         gradient={'bg-gradient-to-br from-blue-300 to-purple-500'}
                         skew={12}
@@ -72,8 +72,8 @@ export default function StackSection() {
 
                 {/* Backend */}
                 <div>
-                    <h2 className="text-6xl font-bold mb-9">Back</h2>
-                    <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96'>
+                    <h2 className="text-6xl font-bold mb-9"></h2>
+                    <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96 pt-14'>
                     <Stack
                         gradient={'bbg-gradient-to-br from-[#030] via-[#333333] to-[#ececec]'}
                         skew={12}
@@ -103,8 +103,8 @@ export default function StackSection() {
 
                 {/* DevOps & Tools */}
                 <div>
-                    <h2 className="text-6xl font-bold mb-9">Tools</h2>
-                    <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96'>
+                    <h2 className="text-6xl font-bold mb-9"></h2>
+                    <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96 pt-14'>
                     <Stack
                         gradient={'bg-gradient-to-br from-blue-300 to-purple-500'}
                         skew={12}

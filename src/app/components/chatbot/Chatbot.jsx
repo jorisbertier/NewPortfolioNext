@@ -95,7 +95,7 @@ const Chatbot = () => {
         <div>
         {isOpen ? (
                 
-            <div className="fixed bottom-10 z-30 h-32 w-32 cursor-pointer right-10 p-4 flex justify-center items-center rounded-full" onClick={() => handleIsOpen()}>
+            <div className="fixed -bottom-3 z-30 h-32 w-32 cursor-pointer right-4 p-4 flex justify-center items-center rounded-full" onClick={() => handleIsOpen()}>
                 {/* <img src={ChatbotLogo.chatbot} width={48} height={48} /> */}
                 {/* <video 
                 src="/assets/videoblack.mp4" 
