@@ -16,7 +16,7 @@ export default function Index({ data, selectedProject }) {
                 return (
                     <div 
                         key={i} 
-                        className="bg-[#ec4e39] h-[122px] flex justify-between items-center px-[10%] transition-[clip-path] duration-400"
+                        className="bg-primary h-[122px] flex justify-between items-center px-[10%] transition-[clip-path] duration-400"
                         style={{ clipPath: selectedProject == i ? "inset(0 0 0)" : "inset(50% 0 50%)" }}
                     >
                         <p className="text-[8vw] leading-[7.5vw] font-bold uppercase text-[#010101] relative z-10 m-0">

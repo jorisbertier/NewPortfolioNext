@@ -12,12 +12,12 @@ export default function HeroSection() {
     const size = isHovered ? 300 : 40;
 
     return (
-        <main className="relative h-[300vh] w-full flex flex-col text-[#afa18f] text-4xl leading-[66px] cursor-default">
+        <main className="relative h-[300vh] w-full flex flex-col text-brown text-4xl leading-[66px] cursor-default">
             
             {/* Première section */}
             <div className="h-screen w-full flex items-center justify-center" id="home">
                 <p className="leading-[100px] max-w-[1000px] uppercase p-10 text-center font-avantGarde text-[6rem] font-bold">
-                    I develop<br></br> <span className="text-[#ec4e39]">{'things'} </span><br></br> for <br></br>the web
+                    I develop<br></br> <span className="text-primary">{'things'} </span><br></br> for <br></br>the web
                 </p>
             </div>
             {/* <StackSection/> */}
@@ -29,7 +29,7 @@ export default function HeroSection() {
 
             {/* Masque dynamique superposé */}
             <motion.div 
-                className="absolute top-0 left-0 w-full h-full bg-[#ec4e39] text-black z-20 pointer-events-auto"
+                className="absolute top-0 left-0 w-full h-full bg-primary text-black z-20 pointer-events-auto"
                 animate={{
                     WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`, // Suppression de scrollY
                     WebkitMaskSize: `${size}px`,

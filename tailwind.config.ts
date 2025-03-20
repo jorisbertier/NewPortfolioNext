@@ -15,7 +15,13 @@ export default {
         brown: "#afa18f",
         shadow: '#1C1917',
         textprimary: '#ffff',
-        primary: '#ec4e39'
+        // primary: '#4E5340',
+        // primary: '#6B4E71',
+        primary: '#9bf3f0',
+        // primary: '#0081A7',
+        // primary: '#ec4e39',
+        // primary: '#ec4e39',
+        // primary: '#ec4e39',
       },
       fontFamily: {
         avantGarde: ["Avant Garde Book BT", "sans-serif"],
@@ -23,7 +29,7 @@ export default {
       backgroundColor: {
         bgbrown: "#afa18f",
         shadow: '#1C1917',
-        primary: '#ec4e39'
+        primary: '#5efc8d'
       },
       boxShadow: {
         customStack: '6px 6px 0 1px #1d1e30',
