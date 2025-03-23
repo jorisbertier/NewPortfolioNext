@@ -15,7 +15,7 @@ export default function Home() {
   const [marginLeft, setMarginLeft] = useState("0");
 
   const [hovered, setHovered] = useState(false)
-
+  //comments
   useEffect(() => {
     if (isActive) setIsActive(false);
   }, [pathname]);
