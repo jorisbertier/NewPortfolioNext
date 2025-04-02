@@ -36,7 +36,7 @@ export default function Home() {
   }
 
   return (
-    <div className='w-screen flex flex-col'>
+    <div className='w-screen flex flex-col max-w-full'>
       <div className='fixed top-8 font-extrabold z-30 text-3xl left-10 text-brown'>
         {/* <img src={'/assets/logoPortfolio.png'} alt="Logo portfolio Joris Bertier" width={40} height={40} className='rounded-full'/>/ */}
         JB
@@ -62,11 +62,11 @@ export default function Home() {
           </div>
         </div>
       <ScrollProgressBar/>
-      <div className='max-w-full'>
+      <div className='max-w-full -mb-10 s:mb-0'>
         {/* <p className=' text-[60px] top-[100px] left-[100px] text-white z-10 font-avantGarde font-bold absolute'>Hello .<span className='bg-white h-8 w-8 rounded-full z-10'></span></p> */}
         {/* Texte principal en arrière-plan */}
         <div className="absolute z-50">
-          <div className="fixed right-2 sm:right-6 z-10 p-7">
+          <div className="fixed -right-4 sm:right-6 z-10 p-7">
             <div
               onClick={() => setIsActive(!isActive)}
               className="h-14 w-14 xs:w-20 xs:h-20 flex items-center justify-center rounded-full bg-bgbrown cursor-pointer"

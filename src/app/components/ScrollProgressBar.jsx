@@ -17,7 +17,7 @@ const ScrollProgressBar = () => {
     }, []);
 
     return (
-        <div className="fixed top-1/2 left-14 transform -translate-y-1/2 h-[300px] w-2 z-50 rounded-md">
+        <div className="fixed top-1/2 left-3 sm:left-14 transform -translate-y-1/2 h-[300px] w-2 z-50 rounded-md">
             <motion.div
                 className="w-full bg-bgbrown rounded-md"
                 animate={{ height: `${scrollPercentage}%` }}
