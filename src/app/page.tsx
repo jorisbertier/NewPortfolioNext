@@ -38,7 +38,8 @@ export default function Home() {
   return (
     <div className='w-screen flex flex-col'>
       <div className='fixed top-8 font-extrabold z-30 text-3xl left-10 text-brown'>
-        <img src={'/assets/logoPortfolio.png'} alt="Logo portfolio Joris Bertier" width={40} height={40} className='rounded-full'/>
+        {/* <img src={'/assets/logoPortfolio.png'} alt="Logo portfolio Joris Bertier" width={40} height={40} className='rounded-full'/>/ */}
+        JB
       </div>
       {/* <div
         className="fixed bottom-8 font-bold z-40 text-sm left-12 text-brown w-16 h-4 overflow-hidden"
@@ -65,10 +66,10 @@ export default function Home() {
         {/* <p className=' text-[60px] top-[100px] left-[100px] text-white z-10 font-avantGarde font-bold absolute'>Hello .<span className='bg-white h-8 w-8 rounded-full z-10'></span></p> */}
         {/* Texte principal en arrière-plan */}
         <div className="absolute z-50">
-          <div className="fixed right-6 z-10 p-7">
+          <div className="fixed right-2 sm:right-6 z-10 p-7">
             <div
               onClick={() => setIsActive(!isActive)}
-              className="w-20 h-20 flex items-center justify-center rounded-full bg-bgbrown cursor-pointer"
+              className="h-14 w-14 xs:w-20 xs:h-20 flex items-center justify-center rounded-full bg-bgbrown cursor-pointer"
             >
               <div
                 className={`relative w-full flex flex-col items-center transition-transform duration-300 

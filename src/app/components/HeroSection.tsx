@@ -12,11 +12,11 @@ export default function HeroSection() {
     const size = isHovered ? 300 : 40;
 
     return (
-        <main className="relative h-[300vh] w-full flex flex-col text-brown text-4xl leading-[66px] cursor-default">
+        <main className="relative h-[300vh] w-full flex flex-col text-brown text-4xl leading-[66px] cursor-default max-w-full overflow-hidden">
             
             {/* Première section */}
             <div className="h-screen w-full flex items-center justify-center" id="home">
-                <p className="leading-[100px] max-w-[1000px] uppercase p-10 text-center font-avantGarde text-[6rem] font-bold">
+                <p className="md:leading-[100px] sm:leading-[70px] max-w-[1000px] uppercase p-10 text-center font-avantGarde text-[3rem] xs:text-[3.6rem] s:text-[4rem] md:text-[6rem] font-bold">
                     I develop<br></br> <span className="text-primary">{'things'} </span><br></br> for <br></br>the web
                 </p>
             </div>
@@ -44,7 +44,7 @@ export default function HeroSection() {
                 {/* First section */}
                 <div className="h-screen w-full flex items-center justify-center">
                     <p 
-                        className="max-w-[1000px] mt-20 p-10 text-[6rem] font-bold uppercase leading-[100px] text-center" 
+                        className="md:leading-[100px] sm:leading-[70px] max-w-[1000px] uppercase p-10 text-center font-avantGarde text-[3rem] xs:text-[3.6rem] s:text-[4rem] md:text-[6rem] font-bold" 
                         onMouseEnter={() => setIsHovered(true)} 
                         onMouseLeave={() => setIsHovered(false)}
                     >

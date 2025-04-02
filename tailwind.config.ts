@@ -34,7 +34,12 @@ export default {
       boxShadow: {
         customStack: '6px 6px 0 1px #1d1e30',
       },
-      scrollBehavior: ['smooth'], 
+      scrollBehavior: ['smooth'],
+      screens: {
+        'xxs': '240px',
+        'xs': '350px',
+        's': '380px'
+      },
     },
   },
   plugins: [require('tailwind-scrollbar-hide')],

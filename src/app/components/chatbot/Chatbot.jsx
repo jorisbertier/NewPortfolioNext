@@ -61,7 +61,7 @@ const Chatbot = () => {
             if (messages[messages.length - 1].sender === 'interlocutor') {
                 setIsTyping(true);
                 setTimeout(() => {
-                    let newMessagesWithBotReply = [...newMessages];
+                    let newMessagesWithBotReply = [...newMessages]; 
                     if (currentQuestionIndex === 0 && inputValue.trim().toLowerCase() !== "yes") {
                         newMessagesWithBotReply.push({ sender: 'interlocutor', content: "Please enter 'yes' to play the game !" });
                         setMessages(newMessagesWithBotReply);
@@ -95,20 +95,20 @@ const Chatbot = () => {
         <div>
         {isOpen ? (
                 
-            <div className="fixed -bottom-3 z-30 h-32 w-32 cursor-pointer right-4 p-4 flex justify-center items-center rounded-full" onClick={() => handleIsOpen()}>
+            <div className={`fixed -bottom-3 z-30 h-32 w-32 cursor-pointer right-4 p-4 flex justify-center items-center rounded-full `} onClick={() => handleIsOpen()}>
                 {/* <img src={ChatbotLogo.chatbot} width={48} height={48} /> */}
-                {/* <video 
+                <video 
                 src="/assets/videoblack.mp4" 
                 autoPlay 
                 loop 
                 muted
-                className="z-40 rounded-full"
-                /> */}
-                <img 
+                className={`z-40 rounded-full isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none' `}
+                />
+                {/* <img 
                     src="/assets/videoblack.gif" 
                     alt="Chatbot animation" 
                     className="z-40 rounded-full"
-                />
+                /> */}
             </div>
             ) : (
                 <AnimatePresence>
@@ -145,7 +145,7 @@ const Chatbot = () => {
                 </div>
                 <div className="flex relative items-center p-2 bg-[#E7ECE6] border-none rounded-3xl mb-1 border-red-100">
                 {isChatClosed ? (
-                        <div className="text-black w-full text-center">Conversation closed</div>
+                    <div className="text-black w-full text-center">Conversation closed</div>
                     ) : (
                         <>
                     <input 
