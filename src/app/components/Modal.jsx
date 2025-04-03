@@ -2,7 +2,6 @@
 import React from 'react'
 import Backdrop from './Backdrop'
 import { motion } from 'framer-motion'
-import {Logos, ProjectPicture} from '../utils/LogoDatas'
 import { useState, useEffect } from 'react'
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import LogoStack from './LogoStack'
@@ -14,7 +13,25 @@ function Modal({handleClose, modalOpen,
     texts
 
 }) {
-    console.log('text', texts)
+    const [size, setSize] = useState(25);
+    
+    useEffect(() => {
+    
+        const updateSize = () => {
+            if (window.innerWidth >= 450) {
+                setSize(25);
+            } else {
+                setSize(20);
+            }
+        };
+    
+        window.addEventListener("resize", updateSize);
+        updateSize();
+    
+        return () => window.removeEventListener("resize", updateSize);
+    }, []);
+
+
     useEffect(() => {
         document.body.style.overflowY = modalOpen ? "hidden" : "auto";
         return () => {
@@ -64,15 +81,15 @@ function Modal({handleClose, modalOpen,
     return (
         <Backdrop onClick={handleClose}>
             <motion.div
-                className="max-w-[80vw] w-20 ss:w-[700px] overflow-y-auto flex justify-center items-center max-h-[80vh] m-auto p-0 z-40 rounded-2xl flex-col bg-shadow shadow-2xl"
+                className="max-w-[80vw] w-[250px] md:w-[700px] overflow-y-auto flex justify-center items-center max-h-[80vh] m-auto p-0 z-50 rounded-2xl flex-col bg-shadow shadow-2xl"
                 variants={dropIn}
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className='relative w-full h-[800px] bg-black rounded-xl overflow-hidden'>
+                <div className='relative w-full h-[350px] md:h-[800px] bg-black rounded-xl overflow-hidden'>
                     <motion.img
                         key={currentIndex}
                         src={src[currentIndex]}
-                        className='absolute w-full h-full object-fill aspect-3/2'
+                        className={`absolute w-full h-full ${size > 20 ? 'object-fill aspect-3/2': 'object-contain'}`}
                         initial={{ opacity: 0, filter: "blur(10px)" }}
                         animate={{ opacity: 1, filter: "blur(0px)" }}
                         exit={{ opacity: 0, filter: "blur(10px)" }}
@@ -86,8 +103,8 @@ function Modal({handleClose, modalOpen,
                 </div>
                 <div className='w-full flex justify-center mt-5 mb-3'>
                     <div className="bottom-4 flex items-center space-x-3">
-                        <div className='p-2 bg-primary mr-2 rounded-full cursor-pointer' onClick={() => prevImage()}>
-                            <MdArrowBackIosNew fill="black" size={25} />
+                        <div className='p-1 md:p-2 bg-primary mr-2 rounded-full cursor-pointer' onClick={() => prevImage()}>
+                            <MdArrowBackIosNew fill="black" size={size} />
                         </div>
                             {src.map((_, index) => (
                                 <motion.div
@@ -98,22 +115,22 @@ function Modal({handleClose, modalOpen,
                                     style={{ width: 8 }}
                                 />
                             ))}
-                        <div className='p-2 bg-primary ml-2 rounded-full cursor-pointer' onClick={() => nextImage()}>
-                            <MdArrowForwardIos fill='black' size={25}/>
+                        <div className='p-1 md:p-2 bg-primary ml-2 rounded-full cursor-pointer' onClick={() => nextImage()}>
+                            <MdArrowForwardIos fill='black' size={size}/>
                         </div>
                     </div>
                 </div>
                 <div className='w-full text-left p-4 overflow-y-auto'>
-                    <div className='flex justify-center items-center font-bold text-4xl'>
+                    <div className='flex justify-center items-center font-bold text-2xl md:text-4xl'>
                         <h2>{title}</h2>
                     </div>
                     <div className='mb-5'>
-                        <h2 className='text-3xl mb-4 font-bold'>Description</h2>
-                        <p className='text-base'>{description}
+                        <h2 className='text-xl mt-3 md:mt-0 md:text-3xl mb-4 font-bold'>Description</h2>
+                        <p className='text-sm leading-6 md:leading-0 md:text-base'>{description}
                         </p>
                     </div>
                     <div>
-                        <h2 className='text-3xl font-bold mb-5'>Stack</h2>
+                        <h2 className='text-xl md:text-3xl font-bold mb-5'>Stack</h2>
                         <div className='flex gap-5 items-center'>
                             {stack.map((item, index) => (
                                 <LogoStack key={index} logo={item} size={35}/>
@@ -121,12 +138,12 @@ function Modal({handleClose, modalOpen,
                         </div>
                     </div>
                     <div>
-                        <h2 className='text-3xl font-bold mb-5 mt-5'>Main features</h2>
+                        <h2 className='text-xl md:text-3xl font-bold mb-5 mt-5'>Main features</h2>
                         <div className='flex gap-5 flex-col'>
                         {Array.isArray(texts) && texts.length > 0 ? (
                             texts.map((item, index) => (
                                 <React.Fragment key={index}>
-                                    <span className='text-base'>- {item}</span>
+                                    <span className='text-sm md:text-base'>- {item}</span>
                                 </React.Fragment>
                             ))
                         ) : (
