@@ -64,7 +64,7 @@ function Modal({handleClose, modalOpen,
     return (
         <Backdrop onClick={handleClose}>
             <motion.div
-                className="max-w-[80vw] w-[700px] overflow-y-auto flex justify-center items-center max-h-[80vh] m-auto p-0 z-40 rounded-2xl flex-col bg-shadow shadow-2xl"
+                className="max-w-[80vw] w-20 ss:w-[700px] overflow-y-auto flex justify-center items-center max-h-[80vh] m-auto p-0 z-40 rounded-2xl flex-col bg-shadow shadow-2xl"
                 variants={dropIn}
                 onClick={(e) => e.stopPropagation()}
             >

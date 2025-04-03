@@ -12,16 +12,16 @@ export default function HeroSection() {
     const size = isHovered ? 300 : 40;
 
     return (
-        <main className="relative h-[300vh] w-full flex flex-col text-brown text-4xl leading-[66px] cursor-default max-w-full overflow-hidden">
+        <main className="relative h-[300vh] w-full overflow-x-hidden overflow-y-hidden flex flex-col text-brown text-4xl leading-[66px] cursor-default max-w-full ">
             
             {/* Première section */}
-            <div className="h-screen w-full flex items-center justify-center" id="home">
+            <div className="h-screen w-full mx-w-full overflow-hidden flex items-center justify-center" id="home">
                 <p className="md:leading-[100px] sm:leading-[70px] max-w-[1000px] uppercase p-10 text-center font-avantGarde text-[3rem] xs:text-[3.6rem] s:text-[4rem] md:text-[6rem] font-bold">
                     I develop<br></br> <span className="text-primary">{'things'} </span><br></br> for <br></br>the web
                 </p>
             </div>
             {/* <StackSection/> */}
-            <div className='z-30 m-0 p-0' id="work">
+            <div className='z-30 mt-14 s:mt-0 p-0' id="work">
                 <RevealName name={'Works'}/>
                 <Projects/>
             </div>
