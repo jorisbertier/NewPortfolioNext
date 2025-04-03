@@ -43,7 +43,7 @@ export const ProjectsData = [
             "Optimisation SEO",
             "Expérience mobile friendly"
         ],
-        descriptionShort :"A daily mobile app to track macronutrients",
+        descriptionShort :"A daily mobile app for track your diet",
         src: [
             ProjectPicture.Futur1,
             ProjectPicture.Futur2,

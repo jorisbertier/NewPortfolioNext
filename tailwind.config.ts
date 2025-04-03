@@ -38,7 +38,8 @@ export default {
       screens: {
         'xxs': '240px',
         'xs': '350px',
-        's': '380px'
+        's': '380px',
+        'ss': '450px'
       },
     },
   },

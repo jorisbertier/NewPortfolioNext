@@ -92,7 +92,7 @@ const Chatbot = () => {
 
     return (
         // <div className="absolute top-0 left-0 flex flex-col w-full max-w-md mx-auto h-[500px] border rounded-2xl shadow-lg bg-white overflow-hidden">
-        <div>
+        <div className="invisible sm:visible">
         {isOpen ? (
                 
             <div className={`fixed -bottom-3 z-30 h-32 w-32 cursor-pointer right-4 p-4 flex justify-center items-center rounded-full `} onClick={() => handleIsOpen()}>

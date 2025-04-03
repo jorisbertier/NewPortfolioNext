@@ -18,7 +18,7 @@ export default function Index({ data, setSelectedProject }) {
     };
 
     return (
-        <div className="w-full border-t border-[rgba(183,171,152,0.25)] relative">
+        <div className="w-full border-t border-[rgba(183,171,152,0.25)] relative mb-20 ss:mt-0 ss:mb-0">
             {data.map((project, i) => (
                 <Title key={i} data={{ ...project, i }} setSelectedProject={setSelectedProject} openModal={open} />
             ))}
@@ -53,7 +53,7 @@ function Title({ data, setSelectedProject, openModal }) {
     return (
         <div ref={container} className="border-b border-[rgba(183,171,152,0.25)] relative z-10 cursor-pointer">
             <div
-                className="inline-block pl-[10%] h-[122px]"
+                className=" pl-[10%] h-[80px] ss:h-[122px] flex items-center"
                 onMouseOver={() => setSelectedProject(i)}
                 onMouseLeave={() => setSelectedProject(null)}
                 onClick={() =>
@@ -62,11 +62,11 @@ function Title({ data, setSelectedProject, openModal }) {
             >
                 <motion.p
                     style={{ clipPath: clip }}
-                    className="inline-block text-[8vw] leading-[7.5vw] font-bold uppercase text-[#b7ab98] relative z-10"
+                    className="ss:text-[8vw] text-[1.5rem] leading-[7.5vw] font-bold uppercase text-[#b7ab98] relative z-10"
                 >
                     {title}
                 </motion.p>
-                <p className="absolute top-0 text-[8vw] leading-[7.5vw] font-bold uppercase text-[#1c1c1c]">
+                <p className="absolute top-1/2 -translate-y-1/2 ss:text-[8vw] text-[1.5rem] leading-[7.5vw] font-bold uppercase text-[#1c1c1c]">
                     {title}
                 </p>
             </div>
