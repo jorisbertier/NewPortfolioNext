@@ -1,7 +1,5 @@
 'use client';
 import React from 'react';
-import Stack from '../../Stack';
-import LogoStack from '../../LogoStack';
 
 export default function Index({ data, selectedProject }) {
 
@@ -19,7 +17,7 @@ export default function Index({ data, selectedProject }) {
                         className="bg-primary h-[80px] ss:h-[122px] flex justify-between items-center px-[10%] transition-[clip-path] duration-400"
                         style={{ clipPath: selectedProject == i ? "inset(0 0 0)" : "inset(50% 0 50%)" }}
                     >
-                        <p className="ss:text-[8vw] text-[1.5rem] leading-[7.5vw] font-bold uppercase text-[#010101] relative z-10 m-0">
+                        <p className="ss:text-[8vw] text-[1.7rem] leading-[7.5vw] font-bold uppercase text-[#010101] relative z-10 m-0">
                             {crop(title, 9)}
                         </p>
                         <div className="w-[32%] text-black text-[0.8rem] sm:text-[1.2rem] font-bold flex leading-[30px]">

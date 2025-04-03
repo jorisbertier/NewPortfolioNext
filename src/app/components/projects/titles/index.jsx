@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef, useState } from 'react';
+import React, { useRef,useEffect, useState } from 'react';
 import { useScroll, motion, useTransform, useMotionTemplate } from 'framer-motion';
 import Modal from '../../Modal';
 
@@ -39,12 +39,29 @@ export default function Index({ data, setSelectedProject }) {
 }
 
 function Title({ data, setSelectedProject, openModal }) {
-    const { title, speed, i } = data;
+    let { title, speed, i } = data;
     const container = useRef(null);
+    const [speedValue, setSpeedValue] = useState(data.speed || 0.1);
+    
+    useEffect(() => {
+    
+        const updateSize = () => {
+            if (window.innerWidth >= 450) {
+                setSpeedValue(0.4);
+            } else {
+                setSpeedValue(0.1);
+            }
+        };
+    
+        window.addEventListener("resize", updateSize);
+        updateSize();
+    
+        return () => window.removeEventListener("resize", updateSize);
+    }, []);
 
     const { scrollYProgress } = useScroll({
         target: container,
-        offset: ["start end", `${15 / speed}vw end`],
+        offset: ["start end", `${15 / speedValue}vw end`],
     });
 
     const clipProgress = useTransform(scrollYProgress, [0, 1], [100, 0]);
@@ -62,11 +79,11 @@ function Title({ data, setSelectedProject, openModal }) {
             >
                 <motion.p
                     style={{ clipPath: clip }}
-                    className="ss:text-[8vw] text-[1.5rem] leading-[7.5vw] font-bold uppercase text-[#b7ab98] relative z-10"
+                    className="ss:text-[8vw] text-[1.7rem] leading-[7.5vw] font-bold uppercase text-[#b7ab98] relative z-10"
                 >
                     {title}
                 </motion.p>
-                <p className="absolute top-1/2 -translate-y-1/2 ss:text-[8vw] text-[1.5rem] leading-[7.5vw] font-bold uppercase text-[#1c1c1c]">
+                <p className="absolute top-1/2 -translate-y-1/2 ss:text-[8vw] text-[1.7rem] leading-[7.5vw] font-bold uppercase text-[#1c1c1c]">
                     {title}
                 </p>
             </div>

@@ -41,26 +41,26 @@ export default function Index() {
             initial="initial" 
             animate="enter" 
             exit="exit" 
-            className="fixed top-0 right-0 h-screen bg-gray-900 text-brown z-40"
+            className="fixed top-0 right-0 h-screen bg-gray-900 text-white z-40"
         >
-        <div className="h-full flex flex-col justify-between p-24">
-            <div 
-            onMouseLeave={() => setSelectedIndicator(pathname)} 
-            className="flex flex-col z-50 text-5xl gap-3 mt-20 text-brown"
-            >
-            {navItems.map((data, index) => (
-                <Link 
-                key={index} 
-                data={{ ...data, index }} 
-                isActive={selectedIndicator === data.href} 
-                setSelectedIndicator={setSelectedIndicator}
-                onClick={(e) => handleClick(e, data.href)}
-                scroll={false}
-                />
-            ))}
+            <div className="h-full flex flex-col justify-between p-24">
+                <div 
+                onMouseLeave={() => setSelectedIndicator(pathname)} 
+                className="flex flex-col z-50 text-5xl gap-3 mt-20 text-white"
+                >
+                {navItems.map((data, index) => (
+                    <Link 
+                    key={index} 
+                    data={{ ...data, index }} 
+                    isActive={selectedIndicator === data.href} 
+                    setSelectedIndicator={setSelectedIndicator}
+                    onClick={(e) => handleClick(e, data.href)}
+                    scroll={false}
+                    />
+                ))}
+                </div>
             </div>
-        </div>
-        <Curve />
+            <Curve />
         </motion.div>
     );
 }

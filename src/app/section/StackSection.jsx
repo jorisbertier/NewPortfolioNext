@@ -10,7 +10,7 @@ export default function StackSection() {
     const [isClient, setIsClient] = useState(false);
     
     useEffect(() => {
-        setIsClient(true); // Indique que le composant est monté côté client
+        setIsClient(true);
     }, []);
     
     useEffect(() => {
