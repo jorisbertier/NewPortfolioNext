@@ -2,9 +2,11 @@
 import React, { useRef,useEffect, useState } from 'react';
 import { useScroll, motion, useTransform, useMotionTemplate } from 'framer-motion';
 import Modal from '../../Modal';
+import { useModal } from '@/app/provider/ModalContext';
 
 export default function Index({ data, setSelectedProject }) {
-    const [modalOpen, setModalOpen] = useState(false);
+    // const [modalOpen, setModalOpen] = useState(false);
+    const { modalOpen, setModalOpen } = useModal();
     const [selectedProject, setSelectedProjectState] = useState(null);
 
     const close = () => {
@@ -16,6 +18,8 @@ export default function Index({ data, setSelectedProject }) {
         setSelectedProjectState(project);
         setModalOpen(true);
     };
+
+
 
     return (
         <div className="w-full border-t border-[rgba(183,171,152,0.25)] relative mb-20 ss:mt-0 ss:mb-0">
