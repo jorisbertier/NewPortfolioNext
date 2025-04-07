@@ -34,14 +34,15 @@ export const ProjectsData = [
     {
         title: "Nutri Track",
         alt: "logo expo",
-        description: "Une plateforme e-commerce moderne avec gestion des produits et paiements.",
+        description: "A daily nutrition tracking app designed to monitor meals, nutrients, and habits in real-time.",
         texts: [
-            "Gestion des commandes",
-            "Paiement en ligne sécurisé",
-            "Interface utilisateur dynamique",
-            "Back-office d'administration",
-            "Optimisation SEO",
-            "Expérience mobile friendly"
+            "Redux for state management",
+            "Firebase authentication and database",
+            "Gamification system for user engagement",
+            "Expo for cross-platform development",
+            "App deployed with Expo Go and EAS",
+            "AsyncStorage for local data persistence",
+            "React Navigation for seamless routing",
         ],
         descriptionShort :"A daily mobile app for track your diet",
         src: [
@@ -54,8 +55,9 @@ export const ProjectsData = [
             ProjectPicture.nutri7,
         ],
         stack: [
-            Logos.SymfonyLight,
-            Logos.BootstrapLight,
+            Logos.ExpoLight,
+            Logos.FirebaseLight,
+            Logos.ReduxLight,
         ],
         speed: 0.6
     },

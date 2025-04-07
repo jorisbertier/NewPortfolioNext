@@ -30,6 +30,9 @@ export const Logos = {
     GitLight: "/assets/logoStack/git-light.png",
     FigmaLight: "/assets/logoStack/figma-light.png",
     MysqlLight: "/assets/logoStack/mysql-light.png",
+    ExpoLight: "/assets/logoStack/expo-light.png",
+    FirebaseLight: "/assets/logoStack/firebase-light.png",
+    ReduxLight: "/assets/logoStack/redux-light.png",
 };
 
 export const ChatbotLogo = {
