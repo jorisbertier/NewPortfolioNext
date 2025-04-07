@@ -39,7 +39,8 @@ export default {
         'xxs': '240px',
         'xs': '350px',
         's': '380px',
-        'ss': '450px'
+        'ss': '450px',
+        'sss': '550px'
       },
     },
   },
