@@ -85,11 +85,11 @@ function Modal({handleClose, modalOpen,
                 variants={dropIn}
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className='relative w-full h-[350px] md:h-[800px] bg-black rounded-xl overflow-hidden'>
+                <div className='relative w-full h-[450px] md:h-[1300px] bg-white rounded-xl overflow-hidden'>
                     <motion.img
                         key={currentIndex}
                         src={src[currentIndex]}
-                        className={`absolute w-full h-full ${size > 20 ? 'object-fill aspect-3/2': 'object-contain'}`}
+                        className={`absolute w-full md:h-full ${size > 20 ? 'object-fill aspect-3/2': 'object-fil'}`}
                         initial={{ opacity: 0, filter: "blur(10px)" }}
                         animate={{ opacity: 1, filter: "blur(0px)" }}
                         exit={{ opacity: 0, filter: "blur(10px)" }}

@@ -63,4 +63,11 @@ export const ProjectPicture = {
     calendar2: "/assets/project/calendarAPI4.png",
     calendar3: "/assets/project/calendarAPI.png",
     calendar4: "/assets/project/calendarAPI3.png",
+    nutri1: "/assets/project/nutri.png",
+    nutri3: "/assets/project/nutri3.png",
+    nutri4: "/assets/project/nutri4.png",
+    nutri5: "/assets/project/nutri5.png",
+    nutri6: "/assets/project/nutri6.png",
+    nutri7: "/assets/project/nutri7.png",
+    nutri8: "/assets/project/nutri8.png",
 }

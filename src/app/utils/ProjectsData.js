@@ -45,9 +45,13 @@ export const ProjectsData = [
         ],
         descriptionShort :"A daily mobile app for track your diet",
         src: [
-            ProjectPicture.Futur1,
-            ProjectPicture.Futur2,
-            ProjectPicture.Ecom3
+            ProjectPicture.nutri1,
+            ProjectPicture.nutri8,
+            ProjectPicture.nutri3,
+            ProjectPicture.nutri4,
+            ProjectPicture.nutri5,
+            ProjectPicture.nutri6,
+            ProjectPicture.nutri7,
         ],
         stack: [
             Logos.SymfonyLight,
