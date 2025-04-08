@@ -7,7 +7,7 @@ import HeroSection from './components/HeroSection';
 import PathDrawing from './components/ArrowDrawing';
 import Chatbot from '../app/components/chatbot/Chatbot'
 import ScrollProgressBar from './components/ScrollProgressBar'
-import { useModal } from './provider/ModalContext';
+import { useModal } from './context/ModalContext';
 
 export default function Home() {
   const [isActive, setIsActive] = useState(false);

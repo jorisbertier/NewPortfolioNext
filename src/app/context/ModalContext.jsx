@@ -6,11 +6,11 @@ const ModalContext = createContext();
 export const ModalProvider = ({ children }) => {
     const [modalOpen, setModalOpen] = useState(false);
 
-    const open = () => setModalOpen(true);
-    const close = () => setModalOpen(false);
+    const [selectedProject, setSelectedProjectState] = useState(null);
+
 
     return (
-        <ModalContext.Provider value={{ modalOpen, setModalOpen }}>
+        <ModalContext.Provider value={{ modalOpen, setModalOpen, selectedProject, setSelectedProjectState }}>
         {children}
         </ModalContext.Provider>
     );

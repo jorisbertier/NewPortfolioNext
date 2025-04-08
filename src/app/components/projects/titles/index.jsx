@@ -2,12 +2,14 @@
 import React, { useRef,useEffect, useState } from 'react';
 import { useScroll, motion, useTransform, useMotionTemplate } from 'framer-motion';
 import Modal from '../../Modal';
-import { useModal } from '@/app/provider/ModalContext';
+import { useModal } from '@/app/context/ModalContext';
 
 export default function Index({ data, setSelectedProject }) {
     // const [modalOpen, setModalOpen] = useState(false);
-    const { modalOpen, setModalOpen } = useModal();
-    const [selectedProject, setSelectedProjectState] = useState(null);
+    const { modalOpen, setModalOpen, selectedProject, setSelectedProjectState } = useModal();
+    // const [selectedProject, setSelectedProjectState] = useState(null);
+
+    // console.log(selectedProject.title)
 
     const close = () => {
         setModalOpen(false);

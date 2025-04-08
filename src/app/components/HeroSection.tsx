@@ -29,7 +29,7 @@ export default function HeroSection() {
 
             {/* Masque dynamique superposé */}
             <motion.div 
-                className="absolute top-0 left-0 w-full h-full bg-primary text-black z-10 pointer-events-auto"
+                className="absolute top-0 left-0 w-full h-full bg-primary text-black z-10 pointer-events-auto invisible sm:visible"
                 animate={{
                     WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`, // Suppression de scrollY
                     WebkitMaskSize: `${size}px`,

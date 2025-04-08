@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import LogoStack from './LogoStack'
+import { useModal } from '@/app/context/ModalContext';
 
 function Modal({handleClose, modalOpen,
     src,
@@ -14,6 +15,8 @@ function Modal({handleClose, modalOpen,
 
 }) {
     const [size, setSize] = useState(25);
+    const { selectedProject} = useModal();
+    console.log(selectedProject.title)
     
     useEffect(() => {
     
@@ -85,11 +88,11 @@ function Modal({handleClose, modalOpen,
                 variants={dropIn}
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className='relative w-full h-[450px] md:h-[1300px] bg-white rounded-xl overflow-hidden'>
+                <div className={`relative w-full md:h-[1300px] bg-white rounded-xl overflow-hidden ${selectedProject.title === 'Nutri Track' ? 'h-[600px]' : 'h-[350px]'}`}>
                     <motion.img
                         key={currentIndex}
                         src={src[currentIndex]}
-                        className={`absolute w-full md:h-full ${size > 20 ? 'object-fill aspect-3/2': 'object-fil'}`}
+                        className={`absolute rounded-xl w-full h-full md:h-full ${size > 20 ? 'object-fill aspect-3/2': 'object-fill aspect-3/2'}`}
                         initial={{ opacity: 0, filter: "blur(10px)" }}
                         animate={{ opacity: 1, filter: "blur(0px)" }}
                         exit={{ opacity: 0, filter: "blur(10px)" }}
@@ -133,7 +136,7 @@ function Modal({handleClose, modalOpen,
                         <h2 className='text-xl md:text-3xl font-bold mb-5'>Stack</h2>
                         <div className='flex gap-5 items-center'>
                             {stack.map((item, index) => (
-                                <LogoStack key={index} logo={item} size={35}/>
+                                <LogoStack key={index} logo={item} size={30}/>
                             ))}
                         </div>
                     </div>
