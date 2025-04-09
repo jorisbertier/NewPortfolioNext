@@ -32,25 +32,26 @@ export default function AboutSection() {
     };
 
     return (
-        <div className="text-center">
-            <RevealName name={'About'}/>
-            <div className="flex max-w-full rounded-lg h-[70vh] mb-24">
-                <div className="flex flex-col items-center gap-8 w-1/2">
-                    <h2 className="text-white text-3xl leading-loose mt-8">
-                        Let's Talk <br /> on something <span className="text-teal-500">great</span> <br /> together ☕
+        <div className="z-30" id="contact">
+            <RevealName name={'Contact'}/>
+            <div className="flex max-w-full w-full justify-center items-center rounded-lg h-[70vh] mb-10">
+                <div className="flex flex-col gap-8 w-full text-center md:items-center">
+                    <h2 className="text-white text-3xl leading-loose">
+                        {/* Let's Talk <br /> on something <span className="text-teal-500">great</span> <br /> together ☕ */}
                     </h2>
-                    {[{ href: "mailto:joris.bertier@gmail.com", img: Contact.gitDark, text: "joris.bertier@gmail.com" },
-                      { href: "https://github.com/jorisbertier", img: Contact.gitGreen, text: "Joris Bertier" },
-                      { href: "https://www.linkedin.com/in/joris-bertier-505369260/", img: Contact.linkedin, text: "Joris Bertier" }]
-                        .map(({ href, img, text }) => (
+                    {[{ href: "mailto:joris.bertier@gmail.com", img: Contact.gitDark, text: "joris.bertier@gmail.com", title: 'Email' },
+                      { href: "", img: Contact.gitGreen, text: "+33 6 67 41 38 68" , title: 'Phone'},
+                      { href: "https://github.com/jorisbertier", img: Contact.gitDark, text: "Joris Bertier", title: 'Github' }]
+                        .map(({ href, img, text, title }) => (
                             <a href={href} key={`${img}-${href}`} target="_blank" rel="noopener noreferrer"
-                                className="w-4/5 flex items-center rounded-lg p-4 bg-gray-900 text-white gap-6 transition transform hover:opacity-70 hover:shadow-md hover:-translate-y-2">
-                                <img src={img} alt="contact icon" className="h-10 w-10" />
-                                <div className="font-medium text-lg">{text}</div>
+                                className="flex flex-col ml-[8%] mr-[8%] md:w-[50%] justify-center text-center w-[84%] items-start p-4 text-white text-bold gap-6 border-b-2 border-white">
+                                {/* <img src={img} alt="contact icon" className="h-10 w-10" /> */}
+                                <h4 className='text-xl text-brown'>{title}</h4>
+                                <div className="text-2xl font-normal">{text}</div>
                             </a>
                         ))}
                 </div>
-                <div className="w-1/2 flex flex-col items-center">
+                {/* <div className="w-1/2 flex flex-col items-center">
                     <form onSubmit={onSubmit} className="w-4/5 rounded-lg p-4 text-start">
                         <input type="text" name="name" placeholder="Name..."
                             className="w-4/5 bg-gray-900 text-white font-semibold rounded-lg p-4 opacity-75 mt-8" />
@@ -73,7 +74,7 @@ export default function AboutSection() {
                             </div>
                         )}
                     </form>
-                </div>
+                </div> */}
             </div>
         </div>
     );

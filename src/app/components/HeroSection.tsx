@@ -5,6 +5,7 @@ import useMousePosition from '../utils/useMousePosition';
 import StackSection from '../section/StackSection';
 import Projects from './projects';
 import RevealName from './RevealName';
+import AboutSection from '../section/AboutSection'
 
 export default function HeroSection() {
     const [isHovered, setIsHovered] = useState(false);
@@ -12,7 +13,7 @@ export default function HeroSection() {
     const size = isHovered ? 300 : 40;
 
     return (
-        <main className="relative h-[300vh] w-full overflow-x-hidden overflow-y-hidden flex flex-col text-brown text-4xl leading-[66px] cursor-default max-w-full ">
+        <main className="relative h-[400vh] w-full overflow-x-hidden overflow-y-hidden flex flex-col text-brown text-4xl leading-[66px] cursor-default max-w-full ">
             
             {/* Première section */}
             <div className="h-screen w-full mx-w-full overflow-hidden flex items-center justify-center" id="home">
@@ -26,12 +27,13 @@ export default function HeroSection() {
                 <Projects/>
             </div>
             <StackSection/>
+            <AboutSection/>
 
             {/* Masque dynamique superposé */}
             <motion.div 
                 className="absolute top-0 left-0 w-full h-full bg-primary text-black z-10 pointer-events-auto invisible sm:visible"
                 animate={{
-                    WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`, // Suppression de scrollY
+                    WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`, 
                     WebkitMaskSize: `${size}px`,
                 }}
                 transition={{ type: "tween", ease: "easeOut", duration: 0.3 }}
@@ -61,7 +63,7 @@ export default function HeroSection() {
                     {/* <div className='h-20 w-20'></div> */}
                     <div className='w-[84%] mr-[8%] ml-[8%] mt-3 flex justify-around gap-8 text-center'>
                         <div className='flex flex-col'>
-                            <h2 className="text-6xl font-bold -mt-[110px] ml-14 invisible xl:visible"
+                            <h2 className="text-6xl font-bold -mt-[140px] ml-14 invisible xl:visible"
                                 onMouseEnter={() => setIsHovered(true)} 
                                 onMouseLeave={() => setIsHovered(false)}
                             >Front
@@ -70,13 +72,13 @@ export default function HeroSection() {
                             </div>
                         </div>
                         <div>
-                            <h2 className="text-6xl font-bold -mt-[110px] ml-14 invisible xl:visible"                                 onMouseEnter={() => setIsHovered(true)} 
+                            <h2 className="text-6xl font-bold -mt-[140px] ml-14 invisible xl:visible"                                 onMouseEnter={() => setIsHovered(true)} 
                                 onMouseLeave={() => setIsHovered(false)}>Back</h2>
                             <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96'>
                             </div>
                         </div>
                         <div>
-                            <h2 className="text-6xl font-bold -mt-[110px] invisible xl:visible"                                 onMouseEnter={() => setIsHovered(true)} 
+                            <h2 className="text-6xl font-bold -mt-[140px] invisible xl:visible"                                 onMouseEnter={() => setIsHovered(true)} 
                                 onMouseLeave={() => setIsHovered(false)}>Tools</h2>
                             <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96'>
                             </div>

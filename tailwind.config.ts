@@ -17,7 +17,7 @@ export default {
         textprimary: '#ffff',
         // primary: '#4E5340',
         // primary: '#6B4E71',
-        primary: '#9bf3f0',
+        primary: '#5efc8d',
         // primary: '#0081A7',
         // primary: '#ec4e39',
         // primary: '#ec4e39',

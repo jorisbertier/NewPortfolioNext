@@ -136,7 +136,7 @@ function Modal({handleClose, modalOpen,
                         <h2 className='text-xl md:text-3xl font-bold mb-5'>Stack</h2>
                         <div className='flex gap-5 items-center'>
                             {stack.map((item, index) => (
-                                <LogoStack key={index} logo={item} size={30}/>
+                                <LogoStack key={index} logo={item} size={35}/>
                             ))}
                         </div>
                     </div>
