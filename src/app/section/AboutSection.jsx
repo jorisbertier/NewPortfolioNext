@@ -40,14 +40,23 @@ export default function AboutSection() {
                         {/* Let's Talk <br /> on something <span className="text-teal-500">great</span> <br /> together ☕ */}
                     </h2>
                     {[{ href: "mailto:joris.bertier@gmail.com", img: Contact.gitDark, text: "joris.bertier@gmail.com", title: 'Email' },
-                      { href: "", img: Contact.gitGreen, text: "+33 6 67 41 38 68" , title: 'Phone'},
-                      { href: "https://github.com/jorisbertier", img: Contact.gitDark, text: "Joris Bertier", title: 'Github' }]
-                        .map(({ href, img, text, title }) => (
-                            <a href={href} key={`${img}-${href}`} target="_blank" rel="noopener noreferrer"
-                                className="flex flex-col ml-[8%] mr-[8%] md:w-[50%] justify-center text-center w-[84%] items-start p-4 text-white text-bold gap-6 border-b-2 border-white">
-                                {/* <img src={img} alt="contact icon" className="h-10 w-10" /> */}
-                                <h4 className='text-xl text-brown'>{title}</h4>
-                                <div className="text-2xl font-normal">{text}</div>
+                        { href: "", img: Contact.gitGreen, text: "+33 6 67 41 38 68" , title: 'Phone'},
+                        { href: "https://github.com/jorisbertier", img: Contact.gitDark, text: "Joris Bertier", title: 'Github' }]
+                            .map(({ href, img, text, title }) => (
+                                <a href={href} key={`${img}-${href}`} target="_blank" rel="noopener noreferrer"
+                                    className="flex flex-col ml-[8%] mr-[8%] md:w-[50%] justify-center text-center w-[84%] items-start p-4 text-white text-bold gap-6 border-b-2 border-white">
+                                    {/* <img src={img} alt="contact icon" className="h-10 w-10" /> */}
+                                    <h4 className='text-xl text-brown'>{title}</h4>
+                                    <div className='flex'>
+                                        <div className="text-2xl font-normal">{text}</div>
+                                        {/* {text === 'joris.bertier@gmail.com' &&
+                                            <div className='text-2xl ml-10 relative z-40' >
+                                                <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 11C6 8.17157 6 6.75736 6.87868 5.87868C7.75736 5 9.17157 5 12 5H15C17.8284 5 19.2426 5 20.1213 5.87868C21 6.75736 21 8.17157 21 11V16C21 18.8284 21 20.2426 20.1213 21.1213C19.2426 22 17.8284 22 15 22H12C9.17157 22 7.75736 22 6.87868 21.1213C6 20.2426 6 18.8284 6 16V11Z" stroke="#afa18f" strokeWidth="2"></path> <path opacity="0.5" d="M6 19C4.34315 19 3 17.6569 3 16V10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H15C16.6569 2 18 3.34315 18 5" stroke="#afa18f" strokeWidth="1.5"></path> </g></svg>
+                                                <div onClick={() => console.log('click')} className='absolute z-50 top-0 left-20 -translate-x-1/2 text-lg w-32 bg-black/50 rounded-md'>Copy adress</div>
+                                            </div>
+                                            
+                                            } */}
+                                    </div>
                             </a>
                         ))}
                 </div>
