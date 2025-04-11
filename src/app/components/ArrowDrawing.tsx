@@ -82,11 +82,6 @@ export default function ArrowDrawing({ bottom }: { bottom: number }) {
 /**
  * ==============   Styles   ================
  */
-
-const image: React.CSSProperties = {
-    maxWidth: "80vw",
-}
-
 const shape: React.CSSProperties = {
     strokeWidth: 10,
     strokeLinecap: "round",
