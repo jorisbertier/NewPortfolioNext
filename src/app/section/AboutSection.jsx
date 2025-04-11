@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import RevealName from '../components/RevealName';
 import {Contact} from '../utils/LogoDatas'
-// import Linkedin from '../assets/contact/icons8-linkedin-50.png';
-// import Git from '../assets/contact/icons8-github-60.png';
-// import Email from '../assets/contact/icons8-mail-48.png';
 
 export default function AboutSection() {
     const [messageSuccess, setMessageSuccess] = useState(false);

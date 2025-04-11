@@ -27,7 +27,7 @@ export const ProjectsData = [
             Logos.SymfonyLight,
             Logos.BootstrapLight,
             Logos.AngularLight,
-            Logos.MysqlLight
+            Logos.MysqlLight,
         ],
         speed: 0.6
     },
@@ -58,6 +58,7 @@ export const ProjectsData = [
             Logos.ExpoLight,
             Logos.FirebaseLight,
             Logos.ReduxLight,
+            Logos.TypescriptLight
         ],
         speed: 0.6
     },
@@ -87,28 +88,56 @@ export const ProjectsData = [
         ],
         speed: 0.5
     },
+    // {
+    //     title: "Entract",
+    //     alt: "logo beer",
+    //     description: "Entracte is an online showcase site for a brewery and bar. The site aims to showcase the brewery and the craft beers offered by the retailer.",
+    //     texts: [
+    //         "Integration scss",
+    //         "Parallax effect",
+    //         "Responsive app",
+    //         "Careful typography for visual identity",
+    //         "Optimization SEO",
+    //     ],
+    //     descriptionShort :"Online Brewery for buy beers ",
+    //     src: [
+    //         ProjectPicture.Entracte1,
+    //         ProjectPicture.Entracte4,
+    //         ProjectPicture.Entracte2,
+    //         ProjectPicture.Entracte3,
+    //         ProjectPicture.Entracte5,
+    //     ],
+    //     stack: [
+    //         Logos.JsLight,
+    //         Logos.SassLight,
+    //     ],
+    //     speed: 0.5
+    // }
     {
-        title: "Entract",
-        alt: "logo beer",
-        description: "Entracte is an online showcase site for a brewery and bar. The site aims to showcase the brewery and the craft beers offered by the retailer.",
+        title: "Food Factory",
+        alt: "logo food factory",
+        description: "Food Factory is a website for search your delicious recipes ideas.",
         texts: [
-            "Integration scss",
-            "Parallax effect",
-            "Responsive app",
-            "Careful typography for visual identity",
-            "Optimization SEO",
+            "Design Patterns",
+            "OOP (Object-Oriented Programming)",
+            "Funnel algorithm",
+            "Algorithm Performance Comparison",
+            "Performance Testing with JsBench",
+            "Green Code",
+            "Vanillajs",
+            "Figma Mockup",
         ],
-        descriptionShort :"Online Brewery for buy beers ",
+        descriptionShort :"A recipe website with a powerful search engine",
         src: [
-            ProjectPicture.Entracte1,
-            ProjectPicture.Entracte4,
-            ProjectPicture.Entracte2,
-            ProjectPicture.Entracte3,
-            ProjectPicture.Entracte5,
+            ProjectPicture.recipes1,
+            ProjectPicture.recipes5,
+            ProjectPicture.recipes2,
+            ProjectPicture.recipes3,
+            ProjectPicture.recipes4,
         ],
         stack: [
             Logos.JsLight,
-            Logos.SassLight,
+            Logos.BootstrapLight,
         ],
         speed: 0.5
     }

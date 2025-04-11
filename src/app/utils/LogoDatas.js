@@ -33,6 +33,7 @@ export const Logos = {
     ExpoLight: "/assets/logoStack/expo-light.png",
     FirebaseLight: "/assets/logoStack/firebase-light.png",
     ReduxLight: "/assets/logoStack/redux-light.png",
+    TypescriptLight: "/assets/logoStack/typescript-light.png",
 };
 
 export const ChatbotLogo = {
@@ -73,4 +74,9 @@ export const ProjectPicture = {
     nutri6: "/assets/project/nutri6.png",
     nutri7: "/assets/project/nutri7.png",
     nutri8: "/assets/project/nutri8.png",
+    recipes1: "/assets/project/petitsplats.png",
+    recipes2: "/assets/project/petitsplats2.png",
+    recipes3: "/assets/project/petitsplats3.png",
+    recipes4: "/assets/project/petitsplats4.png",
+    recipes5: "/assets/project/petitsplats5.png",
 }

@@ -84,11 +84,11 @@ function Modal({handleClose, modalOpen,
     return (
         <Backdrop onClick={handleClose}>
             <motion.div
-                className="max-w-[80vw] w-[250px] s:w-[350px] ss:w-[400px] sss:w-[550px] md:w-[700px] overflow-y-auto flex justify-center items-center max-h-[80vh] m-auto p-0 z-50 rounded-2xl flex-col bg-shadow shadow-2xl"
+                className="max-w-[80vw] w-[250px] s:w-[350px] ss:w-[400px] sss:w-[550px] md:w-[700px] overflow-y-auto flex justify-center items-center h-[70vh] s:max-h-[80vh] m-auto p-0 z-50 rounded-2xl flex-col bg-shadow shadow-2xl"
                 variants={dropIn}
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className={`relative w-full md:h-[1300px] bg-white rounded-xl overflow-hidden ${selectedProject.title === 'Nutri Track' ? 'h-[600px]' : 'h-[350px]'}`}>
+                <div className={`relative w-full md:h-[1300px] bg-white rounded-xl overflow-hidden ${selectedProject.title === 'Nutri Track' ? 'h-[600px]' : 'h-[550px]'}`}>
                     <motion.img
                         key={currentIndex}
                         src={src[currentIndex]}
