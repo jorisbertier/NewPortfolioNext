@@ -1,6 +1,6 @@
 "use client"
 
-import * as motion from "motion/react-client"
+import { motion, Variants } from "framer-motion"
 
 // const draw = {
 //     hidden: { pathLength: 0, opacity: 0 },
@@ -16,7 +16,7 @@ import * as motion from "motion/react-client"
 //         }
 //     },
 // }
-const draw = {
+const draw: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: {
         pathLength: 1,
@@ -82,6 +82,7 @@ export default function ArrowDrawing({ bottom }: { bottom: number }) {
 /**
  * ==============   Styles   ================
  */
+
 const shape: React.CSSProperties = {
     strokeWidth: 10,
     strokeLinecap: "round",
