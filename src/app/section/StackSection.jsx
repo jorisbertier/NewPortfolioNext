@@ -40,7 +40,7 @@ export default function StackSection() {
         <div className='h-screen w-screen relative' id="stack">
             <RevealName name={'Stack'}/>
                 
-            <div className='w-[84%] max-w-full mr-[8%] ml-[8%] -mt-2 sm:-mt-28 xl:mt-3 flex flex-col justify-center md:flex-row md:justify-evenly gap-0 s:gap-4 lg:gap-8 text-center'>
+            <div className='w-[84%] max-w-full mr-[8%] ml-[8%] -mt-6 sm:-mt-28 xl:mt-3 flex flex-col justify-center md:flex-row md:justify-evenly gap-0 s:gap-4 lg:gap-8 text-center'>
                 {/* Frontend */}
                 <div className='flex flex-col'>
                     <h2 className="text-3xl font-bold my-8 ss:my-3 visible sm:invisible text-center">Front</h2>
