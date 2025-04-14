@@ -83,8 +83,6 @@ export default function Home() {
         </div>
         <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
       </div>
-      <PathDrawing bottom={0}/>
-      <PathDrawing bottom={45}/>
       <HeroSection>
       </HeroSection>
       <Chatbot/>

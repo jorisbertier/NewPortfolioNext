@@ -6,6 +6,7 @@ import StackSection from '../section/StackSection';
 import Projects from './projects';
 import RevealName from './RevealName';
 import AboutSection from '../section/AboutSection'
+import PathDrawing from '../components/ArrowDrawing'
 
 export default function HeroSection() {
     const [isHovered, setIsHovered] = useState(false);
@@ -16,13 +17,15 @@ export default function HeroSection() {
         <main className="relative h-[310vh] ss:h-[400vh] w-full overflow-x-hidden overflow-y-hidden flex flex-col text-brown text-4xl leading-[66px] cursor-default max-w-full ">
             
             {/* Première section */}
-            <div className="h-screen w-full mx-w-full overflow-hidden flex items-center justify-center" id="home">
+            <div className="h-screen relative w-full mx-w-full overflow-hidden flex flex-col items-center justify-center" id="home">
                 <p className="md:leading-[100px] sm:leading-[70px] max-w-[1000px] uppercase p-10 text-center font-avantGarde text-[3rem] xs:text-[3.6rem] s:text-[4rem] md:text-[6rem] font-bold">
                     I develop<br></br> <span className="text-primary">{'things'} </span><br></br> for <br></br>the web
                 </p>
+                <PathDrawing bottom={0}/>
+                <PathDrawing bottom={45}/>
             </div>
             {/* <StackSection/> */}
-            <div className='z-30 mt-14 s:mt-0 p-0' id="work">
+            <div className='z-30 mt-4 ss:mt-14 s:mt-0 p-0' id="work">
                 <RevealName name={'Works'}/>
                 <Projects/>
             </div>
