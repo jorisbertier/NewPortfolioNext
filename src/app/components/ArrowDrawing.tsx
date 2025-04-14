@@ -33,7 +33,7 @@ const draw: Variants = {
 
 export default function ArrowDrawing({ bottom }: { bottom: number }) {
     return (
-        <div className={`absolute invisible ss:visible bottom-0 left-1/2 transform -translate-x-1/2  z-30 flex justify-center max-w-full w-full`} style={{ bottom: `-${bottom}px` }}>
+        <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2  z-30 flex justify-center max-w-full w-full`} style={{ bottom: `-${bottom}px` }}>
             <motion.svg width="115" height="300" viewBox="0 0 200 400" fill="none">
                 {/* Tige de la flèche */}
                 <motion.ellipse

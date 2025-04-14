@@ -4,7 +4,6 @@ import Nav from '../../src/app/components/nav/index';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import HeroSection from './components/HeroSection';
-import PathDrawing from './components/ArrowDrawing';
 import Chatbot from '../app/components/chatbot/Chatbot'
 import ScrollProgressBar from './components/ScrollProgressBar'
 import { useModal } from './context/ModalContext';
