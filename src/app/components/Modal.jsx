@@ -34,6 +34,15 @@ function Modal({handleClose, modalOpen,
         return () => window.removeEventListener("resize", updateSize);
     }, []);
 
+    useEffect(() => {
+        if (modalOpen && src && src.length > 0) {
+            src.forEach((image) => {
+                const img = new Image();
+                img.src = image;
+            });
+        }
+    }, [modalOpen, src]);
+
 
     useEffect(() => {
         document.body.style.overflowY = modalOpen ? "hidden" : "auto";
@@ -91,6 +100,7 @@ function Modal({handleClose, modalOpen,
                 <div className={`relative w-full md:h-[1300px] bg-white rounded-xl overflow-hidden ${selectedProject.title === 'Nutri Track' ? 'h-[600px]' : 'h-[550px]'}`}>
                     <motion.img
                         key={currentIndex}
+                        loading="eager"
                         src={src[currentIndex]}
                         className={`absolute rounded-xl w-full h-full md:h-full ${size > 20 ? 'object-fill aspect-3/2': 'object-fill aspect-3/2'}`}
                         initial={{ opacity: 0, filter: "blur(10px)" }}

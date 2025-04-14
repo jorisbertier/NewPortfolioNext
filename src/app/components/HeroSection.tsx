@@ -25,7 +25,7 @@ export default function HeroSection() {
                 <PathDrawing bottom={90}/>
             </div>
             {/* <StackSection/> */}
-            <div className='z-30 ss:mt-14 ss:p-0 bg-blue-400' id="work">
+            <div className='z-30 ss:mt-14 ss:p-0' id="work">
                 <RevealName name={'Works'}/>
                 <Projects/>
             </div>
