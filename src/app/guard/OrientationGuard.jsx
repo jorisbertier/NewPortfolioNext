@@ -9,7 +9,7 @@ export default function OrientationGuard({ children }) {
         const checkOrientation = () => {
             const isPortraitMode =
                 window.matchMedia("(orientation: portrait)").matches &&
-                window.innerHeight > window.innerWidth;
+                window.innerWidth > window.innerHeight;
             setIsPortrait(isPortraitMode);
         };
 
