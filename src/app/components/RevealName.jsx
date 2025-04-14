@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function RevealName({name}) {
     return (
-        <section className="py-10 sm:py-20 z-10 ml-[10%] text-brown w-full sm:w-[300px]">
+        <section className="py-10 mt-10 s:mt-0 sm:py-20 z-10 ml-[10%] text-brown w-full sm:w-[300px]">
         {/* <FlipLink href="#">Joris</FlipLink> */}
         {/* <FlipLink href="#">Linkedin</FlipLink> */}
         {/* <FlipLink href="#">Facebook</FlipLink> */}
