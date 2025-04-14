@@ -40,7 +40,8 @@ export default {
         'xs': '350px',
         's': '380px',
         'ss': '450px',
-        'sss': '550px'
+        'sss': '550px',
+        'portrait': { 'raw': '(orientation: portrait)' },
       },
     },
   },
