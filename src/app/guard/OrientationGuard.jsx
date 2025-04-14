@@ -8,30 +8,28 @@ export default function OrientationGuard({ children }) {
     useEffect(() => {
         const checkOrientation = () => {
             const isPortraitMode =
-                window.matchMedia("(orientation: portrait)").matches ||
+                window.matchMedia("(orientation: portrait)").matches &&
                 window.innerHeight > window.innerWidth;
-                setIsPortrait(isPortraitMode);
-            };
-        
+            setIsPortrait(isPortraitMode);
+        };
+
         checkOrientation();
-        
         window.addEventListener("resize", checkOrientation);
         window.addEventListener("orientationchange", checkOrientation);
-        
+
         return () => {
             window.removeEventListener("resize", checkOrientation);
             window.removeEventListener("orientationchange", checkOrientation);
         };
     }, []);
 
-    console.log(isPortrait)
     if (isPortrait) {
         return (
-        <div className="flex items-center justify-center min-h-screen bg-[#171717]">
-            <p className="text-xl text-center px-4 text-white">
-            Please rotate your device to landscape mode for a better experience.
-            </p>
-        </div>
+            <div className="flex items-center justify-center min-h-screen bg-[#171717]">
+                <p className="text-xl text-center px-4 text-white">
+                    Please rotate your device to landscape mode for a better experience.
+                </p>
+            </div>
         );
     }
 
