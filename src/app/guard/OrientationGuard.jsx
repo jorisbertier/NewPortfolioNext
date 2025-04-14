@@ -31,6 +31,7 @@ export default function OrientationGuard({ children }) {
             </div>
         );
     }
-
-    return <>{children}</>;
+    if(orientation === "landscape-secondary" ) {
+        return <>{children}</>;
+    }
 }
