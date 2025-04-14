@@ -3,27 +3,24 @@
 import { useEffect, useState } from "react";
 
 export default function OrientationGuard({ children }) {
-    const [isPortrait, setIsPortrait] = useState(false);
+    const [orientation, setOrientation] = useState("");
 
     useEffect(() => {
-        const checkOrientation = () => {
-            const isPortraitMode =
-                window.matchMedia("(orientation: portrait)").matches &&
-                window.innerWidth > window.innerHeight;
-            setIsPortrait(isPortraitMode);
-        };
-
-        checkOrientation();
-        window.addEventListener("resize", checkOrientation);
-        window.addEventListener("orientationchange", checkOrientation);
-
+        // Function to update the orientation state
+        function updateOrientation() {
+        setOrientation(window.screen.orientation.type);
+        }
+        // Initial update of the orientation state
+        updateOrientation();
+        // Add an event listener for orientation change
+        window.addEventListener("orientationchange", updateOrientation);
+        // Clean up the event listener when the component unmounts
         return () => {
-            window.removeEventListener("resize", checkOrientation);
-            window.removeEventListener("orientationchange", checkOrientation);
+            window.removeEventListener("orientationchange", updateOrientation);
         };
-    }, []);
+    }, [orientation]);
 
-    if (isPortrait) {
+    if (orientation === "landscape-primary") {
         return (
             <div className="flex items-center justify-center min-h-screen bg-[#171717]">
                 <p className="text-xl text-center px-4 text-white">
