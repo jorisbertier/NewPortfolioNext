@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function OrientationGuard({ children }) {
     const [orientation, setOrientation] = useState("");
+    const isSmallScreen = window.innerWidth < 450;
 
     useEffect(() => {
         function updateOrientation() {
@@ -22,7 +23,7 @@ export default function OrientationGuard({ children }) {
             window.removeEventListener("orientationchange", updateOrientation);
             window.removeEventListener("resize", updateOrientation);
         };
-    }, []);
+    }, [isSmallScreen]);
     if (orientation === "landscape-primary") {
         return (
             <div className="flex items-center justify-center min-h-screen bg-[#171717]">
