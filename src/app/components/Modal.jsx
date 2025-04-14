@@ -36,6 +36,7 @@ function Modal({handleClose, modalOpen,
 
     useEffect(() => {
         if (modalOpen && src && src.length > 0) {
+            let loaded = 0;
             src.forEach((image) => {
                 const img = new Image();
                 img.src = image;
