@@ -17,7 +17,7 @@ export default function HeroSection() {
         <main className="relative h-[310vh] ss:h-[400vh] w-full overflow-x-hidden overflow-y-hidden flex flex-col text-brown text-4xl leading-[66px] cursor-default max-w-full ">
             
             {/* Première section */}
-            <div className="h-screen relative w-full mx-w-full overflow-hidden flex flex-col items-center justify-center" id="home">
+            <div className="h-[100vh] ss:h-screen relative w-full mx-w-full overflow-hidden flex flex-col items-center justify-center" id="home">
                 <p className="md:leading-[100px] sm:leading-[70px] max-w-[1000px] uppercase p-10 text-center font-avantGarde text-[3rem] xs:text-[3.6rem] s:text-[4rem] md:text-[6rem] font-bold">
                     I develop<br></br> <span className="text-primary">{'things'} </span><br></br> for <br></br>the web
                 </p>
