@@ -13,7 +13,7 @@ export default function HeroSection() {
     const size = isHovered ? 300 : 40;
 
     return (
-        <main className="relative h-[300vh] sm:h-[400vh] w-full overflow-x-hidden overflow-y-hidden flex flex-col text-brown text-4xl leading-[66px] cursor-default max-w-full ">
+        <main className="relative h-[300vh] ss:h-[400vh] w-full overflow-x-hidden overflow-y-hidden flex flex-col text-brown text-4xl leading-[66px] cursor-default max-w-full ">
             
             {/* Première section */}
             <div className="h-screen w-full mx-w-full overflow-hidden flex items-center justify-center" id="home">
