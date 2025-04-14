@@ -15,9 +15,11 @@ export default function OrientationGuard({ children }) {
             updateOrientation();
             // Add an event listener for orientation change
             window.addEventListener("orientationchange", updateOrientation);
+            window.addEventListener("resize", updateOrientation);
             // Clean up the event listener when the component unmounts
             return () => {
                 window.removeEventListener("orientationchange", updateOrientation);
+                window.removeEventListener("resize", updateOrientation);
             };
 
         }
