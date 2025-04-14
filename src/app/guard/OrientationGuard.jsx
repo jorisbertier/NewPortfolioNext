@@ -5,24 +5,23 @@ import { useEffect, useState } from "react";
 export default function OrientationGuard({ children }) {
     const [orientation, setOrientation] = useState("");
 
-useEffect(() => {
-    function updateOrientation() {
-        if (window.innerWidth < 450) {
+    useEffect(() => {
+        // Function to update the orientation state
+        if(window.innerWidth < 450) {
+            function updateOrientation() {
             setOrientation(window.screen.orientation.type);
-        } else {
-            setOrientation(""); // reset si écran trop large
+            }
+            // Initial update of the orientation state
+            updateOrientation();
+            // Add an event listener for orientation change
+            window.addEventListener("orientationchange", updateOrientation);
+            // Clean up the event listener when the component unmounts
+            return () => {
+                window.removeEventListener("orientationchange", updateOrientation);
+            };
+
         }
-    }
-
-    updateOrientation();
-    window.addEventListener("orientationchange", updateOrientation);
-    window.addEventListener("resize", updateOrientation); // pour gérer aussi resize
-
-    return () => {
-        window.removeEventListener("orientationchange", updateOrientation);
-        window.removeEventListener("resize", updateOrientation);
-    };
-}, [orientation]);
+    }, [orientation]);
 
     if (orientation === "landscape-primary") {
         return (
