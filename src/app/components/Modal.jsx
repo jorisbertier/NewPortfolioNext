@@ -16,7 +16,7 @@ function Modal({handleClose, modalOpen,
 }) {
     const [size, setSize] = useState(25);
     const { selectedProject} = useModal();
-    console.log(selectedProject.title)
+    const [isImagesPreloaded, setIsImagesPreloaded] = useState(false);
     
     useEffect(() => {
     
@@ -39,6 +39,12 @@ function Modal({handleClose, modalOpen,
             src.forEach((image) => {
                 const img = new Image();
                 img.src = image;
+                img.onload = () => {
+                    loaded++;
+                    if (loaded === src.length) {
+                        setIsImagesPreloaded(true);
+                    }
+                };
             });
         }
     }, [modalOpen, src]);
@@ -92,6 +98,7 @@ function Modal({handleClose, modalOpen,
 
     return (
         <Backdrop onClick={handleClose}>
+            {modalOpen && isImagesPreloaded && (
             <motion.div
                 className="max-w-[80vw] w-[250px] s:w-[350px] ss:w-[400px] sss:w-[550px] md:w-[700px] overflow-y-auto flex justify-center items-center h-[70vh] s:max-h-[80vh] m-auto p-0 z-50 rounded-2xl flex-col bg-shadow shadow-2xl"
                 variants={dropIn}
@@ -173,6 +180,7 @@ function Modal({handleClose, modalOpen,
                     </button>
                 </div> */}
             </motion.div>
+            )}
         </Backdrop>
     )
 }
