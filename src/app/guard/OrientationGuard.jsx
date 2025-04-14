@@ -6,22 +6,23 @@ export default function OrientationGuard({ children }) {
     const [orientation, setOrientation] = useState("");
 
     useEffect(() => {
-        // Function to update the orientation state
-        if(window.innerWidth < 450) {
-            function updateOrientation() {
-            setOrientation(window.screen.orientation.type);
+        function updateOrientation() {
+            if (window.innerWidth < 450) {
+                setOrientation(window.screen.orientation.type);
+            } else {
+                setOrientation("");
             }
-            // Initial update of the orientation state
-            updateOrientation();
-            // Add an event listener for orientation change
-            window.addEventListener("orientationchange", updateOrientation);
-            // Clean up the event listener when the component unmounts
-            return () => {
-                window.removeEventListener("orientationchange", updateOrientation);
-            };
         }
-    }, [orientation]);
-
+    
+        updateOrientation();
+        window.addEventListener("orientationchange", updateOrientation);
+        window.addEventListener("resize", updateOrientation);
+    
+        return () => {
+            window.removeEventListener("orientationchange", updateOrientation);
+            window.removeEventListener("resize", updateOrientation);
+        };
+    }, []);
     if (orientation === "landscape-primary") {
         return (
             <div className="flex items-center justify-center min-h-screen bg-[#171717]">
