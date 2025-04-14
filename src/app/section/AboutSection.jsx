@@ -31,7 +31,7 @@ export default function AboutSection() {
     return (
         <div className="z-30 ss:m-0" id="contact">
             <RevealName name={'Contact'}/>
-            <div className="flex max-w-full w-full justify-center items-center rounded-lg h-[70vh] ss:mt-0">
+            <div className="flex max-w-full w-full justify-center items-center rounded-lg bg-red-300 mt-0 h-[60vh] ss:h-[70vh] ss:mt-0">
                 <div className="flex flex-col gap-8 w-full text-center md:items-center">
                     <h2 className="text-white text-3xl leading-loose">
                         {/* Let's Talk <br /> on something <span className="text-teal-500">great</span> <br /> together ☕ */}
