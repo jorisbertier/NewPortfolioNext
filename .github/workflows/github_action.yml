@@ -1,13 +1,10 @@
 # Le nom de l'action qui apparaîtra dans l'interface de GitHub Actions
 name: Deploy Portfolio to Vercel
 
-# Définition des variables d'environnement pour l'ensemble du workflow
-# C'est une bonne pratique pour réutiliser les variables facilement
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
-# Déclenche l'action quand il y a un push sur la branche 'main'
 on:
   push:
     branches:
@@ -19,12 +16,13 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
+
       - name: Install dependencies
         run: npm install
 
@@ -32,10 +30,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v20
+        uses: vercel/actions/deploy@v2
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: ./
-          prod: '--prod --yes'
+          prod: true
