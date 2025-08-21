@@ -28,12 +28,11 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # 5. Deploy to vercel
+      # 5. Déployer sur Vercel
       - name: Deploy to Vercel
         run: |
           npm install -g vercel
-          vercel --prod \
-            --token=${{ secrets.VERCEL_TOKEN }} \
-            --scope ${{ secrets.VERCEL_ORG_ID }} \
-            --confirm \
-            --project ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel --prod --yes --scope $VERCEL_ORG_ID --token $VERCEL_TOKEN --project $VERCEL_PROJECT_ID
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
