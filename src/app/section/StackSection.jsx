@@ -43,7 +43,7 @@ export default function StackSection() {
             <div className='w-[84%] pb-10 ss:pb-0 max-w-full mr-[8%] ml-[8%] -mt-6 sm:-mt-28 xl:mt-3 flex flex-col justify-center md:flex-row md:justify-evenly gap-0 s:gap-4 lg:gap-8 text-center'>
                 {/* Frontend */}
                 <div className='flex flex-col'>
-                    <h2 className="text-3xl font-bold my-8 ss:my-3 visible sm:invisible text-center">Front</h2>
+                    <h2 className="text-3xl font-bold my-8 ss:my-3 visible sm:invisible text-center">Client</h2>
                     {/* <div className='h-20'></div> */}
                     <div className='flex flex-wrap justify-center h-auto gap-6 s:gap-7 xl:gap-10 w-full md:max-w-96 p-0 sm:pt-1'>
                     <Stack
@@ -111,7 +111,7 @@ export default function StackSection() {
 
                 {/* Backend */}
                 <div>
-                <h2 className="text-3xl font-bold my-8 ss:my-3 visible sm:invisible text-center">Back</h2>
+                <h2 className="text-3xl font-bold my-8 ss:my-3 visible sm:invisible text-center">Server</h2>
                     <div className='flex flex-wrap justify-center h-auto gap-6 s:gap-7 xl:gap-10 w-full md:max-w-96 pt-0 sm:pt-1'>
                     <Stack
                         gradient={'bg-[linear-gradient(225deg,_#99daff_0.14%,_#a966ff_99.86%)]'}
