@@ -76,7 +76,7 @@ export default function HeroSection() {
                         </div>
                         <div>
                             <h2 className="text-6xl font-bold -mt-[140px] ml-14 invisible xl:visible"                                 onMouseEnter={() => setIsHovered(true)} 
-                                onMouseLeave={() => setIsHovered(false)}>Back</h2>
+                                onMouseLeave={() => setIsHovered(false)}>Server</h2>
                             <div className='flex flex-wrap justify-center h-auto gap-10 max-w-96'>
                             </div>
                         </div>
