@@ -105,12 +105,12 @@ function Modal({handleClose, modalOpen,
                 variants={dropIn}
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className={`relative w-full md:h-[1300px] bg-white rounded-xl overflow-hidden ${selectedProject.title === 'Nutri Track' ? 'h-[600px]' : 'h-[550px]'}`}>
+                <div className={`relative w-full md:h-[1300px] m-0 p-0 rounded-2xl overflow-hidden ${selectedProject.title === 'Nutri Track' ? 'h-[600px] bg-white' : 'h-[550px] bg-shadow '}`}>
                     <motion.img
                         key={currentIndex}
                         loading="eager"
                         src={src[currentIndex]}
-                        className={`absolute rounded-xl w-full h-full md:h-full ${size > 20 ? 'object-fill aspect-3/2': 'object-fill aspect-3/2'}`}
+                        className={`absolute rounded-xl w-full h-full m-0 md:h-full ${size > 20 ? 'object-fill aspect-3/2': 'object-fill aspect-3/2'}`}
                         initial={{ opacity: 0, filter: "blur(10px)" }}
                         animate={{ opacity: 1, filter: "blur(0px)" }}
                         exit={{ opacity: 0, filter: "blur(10px)" }}
