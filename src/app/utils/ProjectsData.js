@@ -114,30 +114,28 @@ export const ProjectsData = [
     //     speed: 0.5
     // }
     {
-        title: "Food Factory",
-        alt: "logo food factory",
-        description: "Food Factory is a website for search your delicious recipes ideas.",
+        title: "Chinacruz",
+        alt: "logo chinacruz",
+        description: "A comprehensive e-commerce catalog and advanced analytics dashboard designed for a local business in Santa Cruz de la Sierra, Bolivia. Features real-time data synchronization and customer behavior tracking.",
         texts: [
-            "Design Patterns",
-            "OOP (Object-Oriented Programming)",
-            "Funnel algorithm",
-            "Algorithm Performance Comparison",
-            "Performance Testing with JsBench",
-            "Green Code",
-            "Vanillajs",
-            "Figma Mockup",
+            "Full-Stack CRUD System",
+            "Real-time Data Synchronization",
+            "Custom Analytics Dashboard",
+            "User Behavior Tracking",
+            "Database Architecture",
+            "Responsive UI/UX Design",
+            "Performance Optimization"
         ],
-        descriptionShort :"A recipe website with a powerful search engine",
+        descriptionShort :"An e-commerce catalog and analytics platform for a business in Santa Cruz",
         src: [
-            ProjectPicture.recipes1,
-            ProjectPicture.recipes5,
-            ProjectPicture.recipes2,
-            ProjectPicture.recipes3,
-            ProjectPicture.recipes4,
+            ProjectPicture.chinacruz1,
+            ProjectPicture.chinacruz5,
+            ProjectPicture.chinacruz2,
+            ProjectPicture.chinacruz3,
+            ProjectPicture.chinacruz4,
         ],
         stack: [
-            Logos.JsLight,
-            Logos.BootstrapLight,
+            Logos.ReactLight,
         ],
         speed: 0.5
     }
