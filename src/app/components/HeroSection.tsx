@@ -38,7 +38,7 @@ export default function HeroSection() {
                 animate={{
                     WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`, 
                     WebkitMaskSize: `${size}px`,
-                }}
+                } as unknown as Record<string, string>}
                 transition={{ type: "tween", ease: "easeOut", duration: 0.3 }}
                 style={{   
                     WebkitMaskImage: "url('/mask.svg')",
