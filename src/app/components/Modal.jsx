@@ -101,21 +101,20 @@ function Modal({handleClose, modalOpen,
         <Backdrop onClick={handleClose}>
             {modalOpen && isImagesPreloaded && (
             <motion.div
-                className="max-w-[80vw] w-[250px] s:w-[350px] ss:w-[400px] sss:w-[550px] md:w-[700px] overflow-y-auto flex justify-center items-center h-[70vh] s:max-h-[80vh] m-auto p-0 z-50 rounded-2xl flex-col bg-shadow shadow-2xl"
+                className="max-w-[80vw] w-[250px] s:w-[350px] ss:w-[400px] sss:w-[60%] md:w-[700px] overflow-y-auto flex justify-center items-center h-[80vh] s:max-h-[80vh] m-auto p-0 z-50 rounded-2xl flex-col bg-shadow shadow-2xl"
                 variants={dropIn}
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className={`relative w-full md:h-[1300px] m-0 p-0 rounded-2xl overflow-hidden ${selectedProject.title === 'Nutri Track' ? 'h-[600px] bg-white' : 'h-[550px] bg-shadow '}`}>
-                    <motion.img
-                        key={currentIndex}
-                        loading="eager"
-                        src={src[currentIndex]}
-                        className={`absolute rounded-xl w-full h-full m-0 md:h-full ${size > 20 ? 'object-fill aspect-3/2': 'object-fill aspect-3/2'}`}
-                        initial={{ opacity: 0, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, filter: "blur(0px)" }}
-                        exit={{ opacity: 0, filter: "blur(10px)" }}
-                        transition={{ duration: 0.6, ease: "easeInOut" }}
-                    />
+            <div className="relative w-full flex-[1.5] bg-black flex items-center justify-center overflow-hidden">
+                <motion.img
+                    key={currentIndex}
+                    src={src[currentIndex]}
+                    className="max-h-full max-w-full object-contain rounded-2xl"
+                    initial={{ opacity: 0, scale: 0.98, filter: "blur(10px)" }}
+                    animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.35 }}
+                />
                     {/* <div className="absolute flex w-auto right-5 top-3 rounded-full bg-black p-2 text-black/80 text-2xl font-semibold z-10">
                         {stack.map((item, index) => (
                             <LogoStack key={index} logo={item} size={35}/>
@@ -141,7 +140,7 @@ function Modal({handleClose, modalOpen,
                         </div>
                     </div>
                 </div>
-                <div className='w-full text-left p-4 overflow-y-auto'>
+                <div className="w-full flex-1 min-h-0 text-left p-6 overflow-y-auto">
                     <div className='flex justify-center items-center font-bold text-2xl md:text-4xl'>
                         <h2>{title}</h2>
                     </div>
@@ -160,17 +159,27 @@ function Modal({handleClose, modalOpen,
                     </div>
                     <div>
                         <h2 className='text-xl md:text-3xl font-bold mb-5 mt-5'>Main features</h2>
-                        <div className='flex gap-5 flex-col'>
-                        {Array.isArray(texts) && texts.length > 0 ? (
-                            texts.map((item, index) => (
-                                <React.Fragment key={index}>
-                                    <span className='text-sm md:text-base'>- {item}</span>
-                                </React.Fragment>
+                        <div className="flex flex-col gap-3">
+                            {texts.length ? (
+                            texts.map((t, i) => (
+                                <div
+                                key={i}
+                                className="
+                                    text-base md:text-lg 
+                                    leading-relaxed 
+                                    bg-white/5 
+                                    p-3 rounded-lg
+                                "
+                                >
+                                • {t}
+                                </div>
                             ))
-                        ) : (
-                            <p className='text-base'>No features available.</p>
-                        )}
-                    </div>
+                            ) : (
+                            <p className="text-lg opacity-70">
+                                No features available.
+                            </p>
+                            )}
+                        </div>
                     </div>
                 </div>
                 {/* <div className="p-4 text-center">

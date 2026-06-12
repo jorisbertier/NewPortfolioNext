@@ -126,7 +126,7 @@ export const ProjectsData = [
             "Responsive UI/UX Design",
             "Performance Optimization"
         ],
-        descriptionShort :"An e-commerce catalog and analytics platform for a business in Santa Cruz",
+        descriptionShort :"E-commerce catalog and analytics platform",
         src: [
             ProjectPicture.chinacruz1,
             ProjectPicture.chinacruz5,
